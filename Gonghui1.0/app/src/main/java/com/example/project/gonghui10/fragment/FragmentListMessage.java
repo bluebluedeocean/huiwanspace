@@ -43,10 +43,10 @@ import java.util.ArrayList;
  * Created by 19950 on 2016/7/11.
  */
 public class FragmentListMessage extends Fragment implements ReFlashListView.IReflashListener,ReFlashListView.ILoadListener,MyBaseAdapter.ShowImages,
-        AdapterView.OnItemClickListener,MyBaseAdapter.ClickGood {
+        AdapterView.OnItemClickListener {
     private View view;
     String id,title,nick_name,publish_time,publish_location,sign_up_begin_time,sign_up_end_time,activity_start_time,
-            activity_finish_time,activity_location,numsign,numsigned,gatherlocation,face,firstImage,sImage,good_num,comment_num,share_num;
+            activity_finish_time,activity_location,numsign,numsigned,gatherlocation,face,firstImage,sImage;
     ArrayList<ActivityData> activity_list = new ArrayList<ActivityData>();
     private MyBaseAdapter adapter;
     private Context context;
@@ -130,15 +130,12 @@ Log.i("info","进入循环体：i=" + i);
                     activity_location = item.getString("sPosition");
                     numsign = item.getString("sNumber");
                     numsigned = item.getString("sCurrentNumber");
-                    good_num = item.getString("praise");
-                    comment_num = item.getString("comment");
-                    share_num = item.getString("transmit");
 Log.i("info：","这里接受来自服务器的Item信息：" + id + title + nick_name + publish_time + publish_location + sign_up_begin_time
                             + sign_up_end_time + activity_start_time + activity_finish_time + activity_location + numsigned + numsign);
 
                     ActivityData activity_item = new ActivityData(id,title,face,nick_name,publish_time,publish_location,
                             sign_up_begin_time,sign_up_end_time,activity_start_time,
-                            activity_finish_time,activity_location,numsign,numsigned,firstImage,good_num,comment_num,share_num);
+                            activity_finish_time,activity_location,numsign,numsigned,firstImage);
                     if(isLoad) {
                         activity_list.add(activity_item);
                     }else if(isReFlash){
@@ -168,7 +165,7 @@ Log.i("info","handler.postDelayed即将执行showList方法");
     private void showList(final ArrayList<ActivityData> data_list) {
         if(adapter==null){
             adapter = new MyBaseAdapter(getActivity(),data_list);
-            adapter.setInterface(this,this);
+            adapter.setInterface(this);
             listView = (ReFlashListView) view.findViewById(R.id.fragment_listview);
             listView.setInterface((ReFlashListView.IReflashListener) this);
             listView.setInterface((ReFlashListView.ILoadListener) this);
@@ -344,11 +341,6 @@ Log.i("info","handler.postDelayed即将执行showList方法");
                 return null;
             }
         });
-
-    }
-
-    @Override
-    public void onGoodClicked() {
 
     }
 }

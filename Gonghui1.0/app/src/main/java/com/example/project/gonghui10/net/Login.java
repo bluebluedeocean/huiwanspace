@@ -13,6 +13,7 @@ import org.json.JSONObject;
  * Created by Meng on 2016/8/3.
  */
 public class Login {
+    public String sessionId;
     public Login(String phone, String securite_key_md5, final SuccessCallBack successCallBack, final FailCallBack failCallBack) {
         Log.i("info","Login传入的参数：" + phone + securite_key_md5 );
         new NetConnection(Url.app_url,HttpMethod.POST,new NetConnection.SuccessCallBack() {
@@ -22,7 +23,7 @@ public class Login {
                 try {
                     JSONObject obj = new JSONObject(result);
                     String sessionId = obj.getString(Config.KEY_SESSIONID);
-                    Log.i("info","调用Login从服务器返回的数据： " + obj.toString());
+                    Log.i("info","+++++++++++调用Login从服务器返回的数据： " + obj.toString() + sessionId);
                     switch(obj.getInt(Config.KEY_STATUS)) {
                         case Config.RESULT_STATUS_SUCCESS:
                             if (successCallBack!=null) {
@@ -54,6 +55,7 @@ public class Login {
     }
     public static interface SuccessCallBack {
         void onSuccess(String token);
+
     }
     public static interface FailCallBack {
         void onFail(String message);

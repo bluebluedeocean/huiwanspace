@@ -35,13 +35,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo"
-        android:label="@string/app_name_beta"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.SplashActivity"
-            android:label="@string/app_name_beta"
-            android:screenOrientation="portrait"
+            android:label="@string/app_name"
             android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,34 +49,31 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Light.NoTitleBar"/>
-        <activity android:name=".activity.LoginActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.ChangePasswordActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.FindPasswordActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.RegisterActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.WaterCameraActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.WaterPhotoActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".util.Images"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".util.ImageViewPager"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.LIstMessageItemActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.CaptchaActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.ChoseLocationActivity"
-            android:screenOrientation="portrait"/>
+            android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name=".activity.LoginActivity"></activity>
+        <activity android:name=".activity.ChangePasswordActivity"></activity>
+        <activity android:name=".activity.FindPasswordActivity"></activity>
+        <activity android:name=".activity.RegisterActivity"></activity>
+        <activity android:name=".activity.WaterCameraActivity"></activity>
+        <activity android:name=".activity.WaterPhotoActivity"></activity>
+        <activity android:name=".util.Images"></activity>
+        <activity android:name=".util.ImageViewPager"></activity>
+        <activity android:name=".activity.LIstMessageItemActivity"></activity>
+        <activity android:name=".activity.CaptchaActivity"></activity>
+        <activity android:name=".activity.ChoseLocationActivity"></activity>
+        <activity android:name=".activity.ActHeadItemActivity"></activity>
+        <activity android:name=".activity.FansHeadItemActivity"></activity>
+        <activity android:name=".activity.FollowHeadItemActivity"></activity>
+        <activity android:name=".activity.GradeActivity"></activity>
+        <activity android:name=".activity.JoinedActActivity"></activity>
+        <activity android:name=".activity.LikedActActivity"></activity>
+        <activity android:name=".activity.MeActivity"></activity>
+        <activity android:name=".activity.PraisedActActivity"></activity>
+        <activity android:name=".activity.SettingActivity"></activity>
+        <activity android:name=".activity.UserNickActivity"></activity>
 
         <activity
             android:name="com.mob.tools.MobUIShell"
-            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:windowSoftInputMode="stateHidden|adjustResize"/>

@@ -33,13 +33,12 @@ public class MyBaseAdapter extends BaseAdapter implements AbsListView.OnScrollLi
 	private PictureShow pictureShow;
 	private DataTransform dataTransform;
 	private ShowImages showImages;//显示照片的接口
-	private ClickGood clickGood;
 	private int mStart,mEnd;	//当前可见的起始项
 	private static String[] URLS;//要加载的图片url
 	private long currentTime = 0;
 
 	String id,title,face,nick_name,publish_time,publish_location,sign_up_begin_time,sign_up_end_time,activity_start_time,
-			activity_finish_time,activity_location,numsign,numsigned,firstPicture,good_num,comment_num,share_num;
+			activity_finish_time,activity_location,numsign,numsigned,firstPicture;
 
 	public MyBaseAdapter(Context context, ArrayList<ActivityData> activity_list) {
 		this.context = context;
@@ -105,9 +104,6 @@ Log.i("info","face" + face.toString());
 		activity_location = arraydatas.getActivity_location();
 		numsign = arraydatas.getNumsign();
 		numsigned = arraydatas.getNumsigned();
-		good_num = arraydatas.getGood_num();
-		comment_num = arraydatas.getComment_num();
-		share_num = arraydatas.getShare_num();
 
 		Log.i("info","adapter中的数据：" + id + title + nick_name + publish_time + publish_location + sign_up_begin_time + sign_up_end_time + activity_start_time
 		+ activity_finish_time + activity_location + numsigned + numsign + "    ****    ");
@@ -147,9 +143,6 @@ Log.i("info","face" + face.toString());
 					.findViewById(R.id.num_sign);
 			holder.numsigned = (TextView) convertView
 					.findViewById(R.id.num_signed);
-			holder.good = (TextView) convertView.findViewById(R.id.good);
-			holder.comment = (TextView) convertView.findViewById(R.id.comment);
-			holder.share = (TextView) convertView.findViewById(R.id.share);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
@@ -178,9 +171,6 @@ Log.i("info","face" + face.toString());
 		holder.place.setText(activity_location);
 		holder.numsign.setText(numsign);
 		holder.numsigned.setText(numsigned);
-		holder.good.setText(good_num);
-		holder.comment.setText(comment_num);
-		holder.share.setText(share_num);
 
 		holder.firstImage.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -190,13 +180,6 @@ Log.i("info","face" + face.toString());
 					showImages.onShowImages(Integer.parseInt(arraydatas.getId()));
 					currentTime = System.currentTimeMillis();
 				}
-			}
-		});
-
-		holder.good.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-
 			}
 		});
 
@@ -219,16 +202,11 @@ Log.i("info","face" + face.toString());
 	/***************************/
 
 	public interface ShowImages {
-		void onShowImages(int id);
+		public void onShowImages(int id);
 	}
 
-	public interface ClickGood {
-		void onGoodClicked();
-	}
-
-	public void setInterface(ShowImages showImages,ClickGood clickGood) {
+	public void setInterface(ShowImages showImages) {
 		this.showImages = showImages;
-		this.clickGood = clickGood;
 	}
 
 	class ViewHolder {
@@ -241,8 +219,7 @@ Log.i("info","face" + face.toString());
 
 		ImageView head_image, firstImage, personheader;
 
-		//点赞 评论 分享
-		TextView good, comment, share;
+		TextView phone, message, comment, mappictureImageView, share;
 
 	}
 }

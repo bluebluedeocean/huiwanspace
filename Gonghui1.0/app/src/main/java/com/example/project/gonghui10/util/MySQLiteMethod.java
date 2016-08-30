@@ -924,7 +924,7 @@ public class MySQLiteMethod implements SQLiteinterface {
 		boolean flag = false;
 		SQLiteDatabase sqLiteDatabase = null;
 		try {
-			String sql = "delete.xmldelete from " + "comments" + " where app_id=?";
+			String sql = "delete from " + "comments" + " where app_id=?";
 			sqLiteDatabase = mySQLiteOpenHelper.getWritableDatabase();
 			sqLiteDatabase.execSQL(sql, params);
 			flag = true;

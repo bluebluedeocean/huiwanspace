@@ -18,14 +18,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginRight="4dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal"
             android:weightSum="4">
 
             <ImageView
                 android:id="@+id/head_image"
-                android:layout_width="50dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="0.8"
                 android:layout_marginLeft="2dp"
                 android:gravity="center"
                 android:src="@mipmap/circle_gray" />
@@ -33,7 +34,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"
+                android:layout_weight="2.5"
                 android:orientation="vertical">
 
                 <TextView
@@ -72,13 +73,14 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <ImageView
+          <!--  <ImageView
                 android:id="@+id/delete_message"
-                android:layout_width="34dp"
+                android:layout_width="0dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/xiala"
-                android:visibility="visible" />
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.7"
+                android:src="@drawable/delete"
+                android:visibility="visible" />-->
         </LinearLayout>
 
         <LinearLayout
@@ -470,18 +472,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3">
 
             <TextView
-                android:layout_gravity="center"
-                android:id="@+id/good"
+                android:id="@+id/phone_number"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="1dip"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/dianzan"
+                android:background="@drawable/circle_shape_without"
+                android:drawableStart="@mipmap/good"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
                 android:focusable="false"
@@ -504,7 +506,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/pinglun"
+                android:background="@drawable/circle_shape_without"
+                android:drawableStart="@mipmap/pinglun"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
                 android:focusable="false"
@@ -513,6 +516,7 @@
                 android:text="0"
                 android:textColor="@color/image_item_text_color"
                 android:textSize="12sp" />
+
 
             <LinearLayout
                 android:layout_width="0dip"
@@ -527,7 +531,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="1dp"
                 android:layout_weight="1"
-                android:drawableStart="@drawable/zhuanfa"
+                android:background="@drawable/circle_shape_without"
+                android:drawableStart="@mipmap/zhuanfa"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
                 android:focusable="false"
