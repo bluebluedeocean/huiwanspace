@@ -40,6 +40,7 @@
                 <Button
                     android:text="拍照"
                     android:textSize="14dp"
+                    android:layout_marginLeft="12dp"
                     android:textColor="@color/light"
                     android:id="@+id/chosefromgrally_btn"
                     android:layout_gravity="center"
