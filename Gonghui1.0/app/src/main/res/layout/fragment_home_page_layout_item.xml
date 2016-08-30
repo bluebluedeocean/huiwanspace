@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_list_selector_outside"
+        android:duplicateParentState="true"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="4dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/head_image"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="2dp"
+                android:gravity="center"
+                android:src="@mipmap/circle_gray" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:ellipsize="end"
+                    android:paddingBottom="2dp"
+                    android:singleLine="true"
+                    android:text="昵称"
+                    android:textColor="@color/image_item_text_color"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:text="发布时间："
+                        android:textColor="@color/image_item_text_color"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/public_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:text="2016-07-13 15:14"
+
+                        android:textColor="@color/image_item_text_color"
+
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/delete_message"
+                android:layout_width="34dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/xiala"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_marginTop="5dip"
+            android:background="#808080"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/bg_list_selector_without"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/head"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3.8"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/title"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="75dp"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:paddingTop="4dp"
+                                android:singleLine="true"
+                                android:text="这里是活动标题"
+                                android:textColor="@color/image_item_text_color"
+                                android:textSize="18sp" />
+
+                            <LinearLayout
+                                android:id="@+id/line1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="30dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/titletime"
+                                    android:layout_width="20dip"
+                                    android:layout_height="20dip"
+                                    android:background="@mipmap/clock_num"
+                                    android:text=""
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="10dp"
+                                    android:ellipsize="end"
+                                    android:gravity="center_vertical"
+                                    android:singleLine="true"
+                                    android:text="活动起止时间:"
+                                    android:textColor="@color/image_item_text_color"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="3dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="20dip"
+                            android:layout_height="20dip"
+                            android:text=""
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/activity_begin_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="2016-7-13"
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="到"
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/activity_end_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+
+                            android:singleLine="true"
+                            android:text="2016-9-15"
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/line4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="5dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/titlesignup"
+                            android:layout_width="20dip"
+                            android:layout_height="20dip"
+                            android:background="@mipmap/clock_num"
+                            android:text=""
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/signuptime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="报名起止时间"
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="3dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="20dip"
+                            android:layout_height="20dip"
+                            android:text=""
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/sign_up_begin_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="2016-7-1"
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="到"
+                            android:textColor="@color/image_item_text_color"
+
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/sign_up_end_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="2016-7-12"
+                            android:textColor="@color/image_item_text_color"
+
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="5dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/titlepublishplace"
+                            android:layout_width="20dip"
+                            android:layout_height="20dip"
+                            android:background="@mipmap/baoming_num"
+                            android:text=""
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="报名人数: "
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/num_signed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="/"
+                            android:textColor="@color/image_item_text_color"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/num_sign"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="0dp"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="0"
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="5dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/titleplace"
+                            android:layout_width="20dip"
+                            android:layout_height="20dip"
+                            android:background="@mipmap/map_num"
+                            android:text=""
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="活动地址:"
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/place"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="长春净月潭"
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="5dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/titlegather"
+                            android:layout_width="20dip"
+                            android:layout_height="20dip"
+                            android:background="@mipmap/map_num"
+                            android:text=""
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="集合地点"
+                            android:textColor="@color/image_item_text_color"
+
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/gather_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="长春净月潭"
+                            android:textColor="@color/image_item_text_color"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/picture"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="2"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:background="#808080"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/good"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dip"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/dianzan"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:focusable="false"
+                android:gravity="center"
+                android:paddingTop="5dip"
+                android:text="0"
+                android:textColor="@color/image_item_text_color"
+                android:textSize="12sp" />
+
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="#808080"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/pinglun"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:focusable="false"
+                android:gravity="center"
+                android:paddingTop="5dip"
+                android:text="0"
+                android:textColor="@color/image_item_text_color"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="#808080"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/share"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/zhuanfa"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:focusable="false"
+                android:gravity="center"
+                android:paddingTop="5dip"
+                android:text="0"
+                android:textColor="@color/image_item_text_color"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.5dip"
+            android:background="#808080"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+</RelativeLayout>

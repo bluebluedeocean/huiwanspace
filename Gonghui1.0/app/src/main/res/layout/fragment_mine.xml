@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.example.project.gonghui10.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.example.project.gonghui10.view.CustomerScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar" >
+
+        <!--最外层layout-->
+        <LinearLayout
+            android:id="@+id/headpic_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <!--头像个人信息栏-->
+            <LinearLayout
+                android:id="@+id/head"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="1dp"
+                android:orientation="horizontal"
+                android:background="@drawable/layou_selectot"
+                android:clickable="true"
+                >
+                <ImageView
+                    android:id="@+id/headpic"
+                    android:layout_margin="12dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    >
+                    <ImageView
+                        android:src="@mipmap/ic_grade_black_36dp"
+                        android:layout_gravity="center"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="0dp"
+                    android:layout_weight="9"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/headtext_nick"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="不气龙"
+                        android:layout_marginLeft="6dp"
+                        android:textSize="16dp"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+                <ImageView
+                    android:src="@mipmap/ic_chevron_right_black_36dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+
+
+            <!--活动+关注+粉丝-->
+            <LinearLayout
+                android:id="@+id/head_item"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:background="@drawable/layou_selectot"
+                >
+
+                <!--活动-->
+                <LinearLayout
+                    android:id="@+id/head_item_act"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/layou_selectot"
+                    android:clickable="true"
+                    >
+                    <TextView
+                        android:id="@+id/head_item_act_number"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:text="134"
+                        android:gravity="bottom|center"
+                        />
+                    <TextView
+                        android:id="@+id/head_item_act_text"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:text="活动"
+                        android:gravity="top|center"
+                        />
+                </LinearLayout>
+
+                <!--关注-->
+                <LinearLayout
+                    android:id="@+id/head_item_following"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/layou_selectot"
+                    android:clickable="true"
+
+                    >
+                    <TextView
+                        android:id="@+id/head_item_following_number"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:text="106"
+                        android:gravity="bottom|center"
+                        />
+                    <TextView
+                        android:id="@+id/head_item_following_text"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:text="关注"
+                        android:gravity="top|center"
+                        />
+                </LinearLayout>
+
+                <!--粉丝-->
+                <LinearLayout
+                    android:id="@+id/head_item_follower"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/layou_selectot"
+                    android:clickable="true"
+
+                    >
+                    <TextView
+                        android:id="@+id/head_item_follower_number"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:text="58"
+                        android:gravity="bottom|center"
+                        />
+                    <TextView
+                        android:id="@+id/head_item_follower_text"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:textSize="12dp"
+                        android:text="粉丝"
+                        android:gravity="top|center"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--参加的活动-->
+            <LinearLayout
+                android:id="@+id/item_joinactvity"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/layou_selectot"
+                android:clickable="true"
+                android:layout_marginBottom="1dp"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:id="@+id/item_joinactvity_icon"
+                    android:layout_gravity="center"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="12dp"
+                    android:src="@mipmap/ic_assistant_black_36dp"
+                    />
+                <TextView
+                    android:id="@+id/item_joinactvity_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="wrap_content"
+                    android:text="参加的活动"
+                    android:textSize="16dp"
+                    android:layout_margin="6dp"
+                    android:layout_gravity="center_vertical"
+                    />
+                <ImageView
+                    android:src="@mipmap/ic_chevron_right_black_36dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <!--收藏的活动-->
+            <LinearLayout
+                android:id="@+id/item_collectedactivity"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/layou_selectot"
+                android:layout_marginBottom="1dp"
+                android:clickable="true"
+
+                >
+                <ImageView
+                    android:id="@+id/item_collectedactivity_icon"
+                    android:layout_gravity="center"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="12dp"
+                    android:src="@mipmap/ic_collections_bookmark_black_36dp"
+                    />
+                <TextView
+                    android:id="@+id/item_collectedactivity_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="wrap_content"
+                    android:text="收藏的活动"
+                    android:textSize="16dp"
+                    android:layout_margin="6dp"
+                    android:layout_gravity="center_vertical"
+                    />
+                <ImageView
+                    android:src="@mipmap/ic_chevron_right_black_36dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <!--赞过的活动-->
+            <LinearLayout
+                android:id="@+id/item_praisedactivity"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/layou_selectot"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:clickable="true"
+                >
+                <ImageView
+                    android:id="@+id/item_praisedactivity_icon"
+                    android:layout_gravity="center"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="12dp"
+                    android:src="@mipmap/ic_thumb_up_black_36dp"
+                    />
+                <TextView
+                    android:id="@+id/item_praisedactivity_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="wrap_content"
+                    android:text="赞过的活动"
+                    android:textSize="16dp"
+                    android:layout_margin="6dp"
+                    android:layout_gravity="center_vertical"
+                    />
+                <ImageView
+                    android:src="@mipmap/ic_chevron_right_black_36dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/item_grade"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/layou_selectot"
+                android:orientation="horizontal"
+                android:clickable="true"
+                >
+                <ImageView
+                    android:id="@+id/item_grade_icon"
+                    android:layout_gravity="center"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="12dp"
+                    android:src="@mipmap/ic_grade_black_36dp"
+                    />
+                <TextView
+                    android:id="@+id/item_grade_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="wrap_content"
+                    android:text="等级 "
+                    android:textSize="16dp"
+                    android:layout_margin="6dp"
+                    android:layout_gravity="center_vertical"
+                    />
+                <ImageView
+                    android:src="@mipmap/ic_chevron_right_black_36dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <!--用户设置-->
+            <LinearLayout
+                android:id="@+id/item_usersetting"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/layou_selectot"
+                android:orientation="horizontal"
+                android:clickable="true"
+                >
+                <ImageView
+                    android:id="@+id/item_usersetting_icon"
+                    android:layout_gravity="center"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="12dp"
+                    android:src="@mipmap/ic_settings_black_36dp"
+                    />
+                <TextView
+                    android:id="@+id/item_usersetting_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="wrap_content"
+                    android:text="设置 "
+                    android:textSize="16dp"
+                    android:layout_margin="6dp"
+                    android:layout_gravity="center_vertical"
+                    />
+                <ImageView
+                    android:src="@mipmap/ic_chevron_right_black_36dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+    </com.example.project.gonghui10.view.CustomerScrollView>
+
+</RelativeLayout>

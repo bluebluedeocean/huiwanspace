@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.example.project.gonghui10.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+   <!-- <com.example.project.gonghui10.view.CustomerScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_home_page"
+        android:layout_below="@+id/title_bar"
+        android:background="@color/lightgreen">
+
+        <FrameLayout
+            android:id="@+id/fragment_home_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+    </com.example.project.gonghui10.view.CustomerScrollView>
+-->
+
+
+    <FrameLayout
+        android:layout_below="@id/title_bar"
+        android:id="@+id/fragment_home_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+</RelativeLayout>
