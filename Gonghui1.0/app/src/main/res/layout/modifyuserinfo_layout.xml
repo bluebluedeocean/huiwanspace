@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:background="@drawable/ripple_bg"
+            android:layout_marginBottom="1dp"
+            android:clickable="true"
+            >
+            <TextView
+                android:text="使用新头像"
+                android:layout_width="0dp"
+                android:layout_weight="100"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="200"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/uploadpic_iv"
+                    android:layout_gravity="center"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp" />
+                <Button
+                    android:text="拍照"
+                    android:textSize="14dp"
+                    android:textColor="@color/light"
+                    android:id="@+id/chosefromgrally_btn"
+                    android:layout_gravity="center"
+                    android:layout_width="64dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/ripple_blue"
+                    />
+                <Button
+                    android:layout_marginLeft="6dp"
+                    android:textColor="@color/light"
+                    android:textSize="14dp"
+                    android:text="相册"
+                    android:id="@+id/takepohoto_btn"
+                    android:layout_gravity="center"
+                    android:layout_width="64dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/ripple_blue"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/ripple_bg"
+            android:layout_marginBottom="1dp"
+            android:clickable="true"
+
+            >
+            <TextView
+                android:text="新的用户名"
+                android:layout_width="0dp"
+                android:layout_weight="100"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="200"
+                android:layout_height="match_parent">
+                <EditText
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+             </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/ripple_bg"
+            android:layout_marginBottom="12dp"
+            android:clickable="true"
+            >
+            <TextView
+                android:text="性别"
+                android:layout_width="0dp"
+                android:layout_weight="100"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="200"
+                android:layout_height="match_parent">
+               <RadioGroup
+                   android:orientation="horizontal"
+                   android:layout_marginRight="40dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                   <RadioButton
+                       android:text="男"
+                       android:textSize="14dp"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="match_parent" />
+                   <RadioButton
+                       android:text="女"
+                       android:textSize="14dp"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="match_parent" />
+                   <RadioButton
+                       android:text="保密"
+                       android:textSize="14dp"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="match_parent" />
+               </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:background="@drawable/ripple_bg"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_height="48dp"
+            android:clickable="true"
+            >
+            <TextView
+                android:text="省份"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:layout_marginRight="12dp"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/ripple_bg"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_height="48dp"
+            android:clickable="true"
+            >
+            <TextView
+                android:text="学校"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:layout_marginRight="12dp"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/ripple_bg"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_height="48dp"
+            android:clickable="true"
+            >
+            <TextView
+                android:text="校区"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:layout_marginRight="12dp"></Spinner>
+        </LinearLayout>
+
+
+        <TextView
+            android:clickable="true"
+            android:textSize="14dp"
+            android:gravity="center"
+            android:hint="显示选择结果"
+            android:background="@drawable/ripple_bg"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+
+
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/backtouserinfo_btn"
+            android:layout_width="match_parent"
+            android:layout_margin="12dp"
+            android:textSize="14dp"
+            android:text="保存修改"
+            android:textColor="@color/light"
+            android:background="@drawable/ripple_blue"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

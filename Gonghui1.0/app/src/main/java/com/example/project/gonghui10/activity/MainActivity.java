@@ -21,11 +21,20 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.project.gonghui10.Config;
 import com.example.project.gonghui10.R;
 import com.example.project.gonghui10.fragment.MainPageFragment;
 import com.example.project.gonghui10.fragment.SettingFragment;
 import com.example.project.gonghui10.util.SysApplication;
+
+import java.util.HashMap;
 
 public class MainActivity extends Activity {
     protected static final String TAG = "MainActivity";
@@ -33,6 +42,8 @@ public class MainActivity extends Activity {
     private ImageButton mMain,mConstact,mDeynaimic,mSetting;
     private View mPopView;
     private View currentButton;
+
+
 
     private TextView app_cancle;
     private TextView app_exit;
@@ -57,7 +68,13 @@ public class MainActivity extends Activity {
 
         findView();
         init();
+
     }
+
+
+
+
+
 
     private void findView(){
         mPopView= LayoutInflater.from(mContext).inflate(R.layout.app_exit, null);
