@@ -33,12 +33,16 @@ public class MyBaseAdapter extends BaseAdapter implements AbsListView.OnScrollLi
 	private PictureShow pictureShow;
 	private DataTransform dataTransform;
 	private ShowImages showImages;//显示照片的接口
+	private ClickGood clickGood;
+	private ClickComment clickComment;
+	private ClickShare clickShare;
+	private ClickXiala clickXiala;
 	private int mStart,mEnd;	//当前可见的起始项
 	private static String[] URLS;//要加载的图片url
 	private long currentTime = 0;
 
 	String id,title,face,nick_name,publish_time,publish_location,sign_up_begin_time,sign_up_end_time,activity_start_time,
-			activity_finish_time,activity_location,numsign,numsigned,firstPicture;
+			activity_finish_time,activity_location,numsign,numsigned,firstPicture,good_num,comment_num,share_num;
 
 	public MyBaseAdapter(Context context, ArrayList<ActivityData> activity_list) {
 		this.context = context;
@@ -48,7 +52,7 @@ public class MyBaseAdapter extends BaseAdapter implements AbsListView.OnScrollLi
 		roundImageLoader = new RoundImageLoader(context);
 		pictureShow = new PictureShow(context);
 		dataTransform = new DataTransform(context);
-Log.i("info","MyBaseAdapter构造方法" + this.context.toString() + this.activity_list.toString());
+		Log.i("info","MyBaseAdapter构造方法" + this.context.toString() + this.activity_list.toString());
 	}
 
 	public void onDateChange(ArrayList<ActivityData> apk_list) {
@@ -59,7 +63,7 @@ Log.i("info","MyBaseAdapter构造方法" + this.context.toString() + this.activi
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-Log.i("info","getCount()返回值：" + activity_list.size() + " ");
+		Log.i("info","getCount()返回值：" + activity_list.size() + " ");
 		return activity_list.size();
 	}
 
@@ -80,7 +84,7 @@ Log.i("info","getCount()返回值：" + activity_list.size() + " ");
 		// TODO Auto-generated method stub
 		final ActivityData arraydatas = activity_list.get(position);
 		final ViewHolder holder;
-Log.i("info","getVeiw被调用");
+		Log.i("info","getVeiw被调用");
 		/***************************************************************/
 		/**
 		 * 获取数据
@@ -88,7 +92,7 @@ Log.i("info","getVeiw被调用");
 		id = arraydatas.getId();
 		title = arraydatas.getTitle();
 		face = arraydatas.getFace();
-Log.i("info","face" + face.toString());
+		Log.i("info","face" + face.toString());
 		firstPicture = arraydatas.getFirstImage();
 		if(firstPicture!=null) {
 			Log.i("info","第一张照片的URL**************************" + firstPicture.toString());
@@ -104,9 +108,12 @@ Log.i("info","face" + face.toString());
 		activity_location = arraydatas.getActivity_location();
 		numsign = arraydatas.getNumsign();
 		numsigned = arraydatas.getNumsigned();
+		good_num = arraydatas.getGood_num();
+		comment_num = arraydatas.getComment_num();
+		share_num = arraydatas.getShare_num();
 
 		Log.i("info","adapter中的数据：" + id + title + nick_name + publish_time + publish_location + sign_up_begin_time + sign_up_end_time + activity_start_time
-		+ activity_finish_time + activity_location + numsigned + numsign + "    ****    ");
+				+ activity_finish_time + activity_location + numsigned + numsign + "    ****    ");
 		/***************************************************************/
 
 		if (convertView == null) {
@@ -143,34 +150,34 @@ Log.i("info","face" + face.toString());
 					.findViewById(R.id.num_sign);
 			holder.numsigned = (TextView) convertView
 					.findViewById(R.id.num_signed);
+			holder.good = (TextView) convertView.findViewById(R.id.good);
+			holder.comment = (TextView) convertView.findViewById(R.id.comment);
+			holder.share = (TextView) convertView.findViewById(R.id.share);
+			holder.xiala = (ImageView) convertView.findViewById(R.id.xiala);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
-			/*holder.comment.setEnabled(true);
-			holder.share.setEnabled(true);
-			holder.mappictureImageView.setEnabled(true);*/
 		}
 
-			holder.firstImage.setTag(firstPicture);
-			imageLoader.DisplayImage(firstPicture,holder.firstImage);
+		holder.firstImage.setTag(firstPicture);
+		imageLoader.DisplayImage(firstPicture,holder.firstImage);
 		//加载头像
 		holder.head_image.setTag(face);
 		roundImageLoader.DisplayImage(face,holder.head_image);
-		/*pictureShow.showImageByThread(holder.head_image,face);
-		pictureShow.showImageByThread(holder.firstImage,firstPicture);*/
-		/*pictureShow.showImageByAsyncTask(holder.head_image,face);
-		pictureShow.showImageByAsyncTask(holder.firstImage,firstPicture);*/
 		holder.personnickname.setText(arraydatas.getNick_name());
 		holder.title.setText(title);
-		holder.publishtime.setText(dataTransform.timeStamp2Date(publish_time,null));
-		holder.signupbegintime.setText(dataTransform.timeStamp2Date(sign_up_begin_time,null));
-		holder.signupendtime.setText(dataTransform.timeStamp2Date(sign_up_end_time));
-		holder.activitybegintime.setText(dataTransform.timeStamp2Date(activity_start_time));
-		holder.activityendtime.setText(dataTransform.timeStamp2Date(activity_finish_time));
-		holder.activitybegintime.setText(dataTransform.timeStamp2Date(activity_start_time));
+		holder.publishtime.setText(DataTransform.timeStamp2Date(publish_time,null));
+		holder.signupbegintime.setText(DataTransform.timeStamp2Date(sign_up_begin_time,null));
+		holder.signupendtime.setText(DataTransform.timeStamp2Date(sign_up_end_time));
+		holder.activitybegintime.setText(DataTransform.timeStamp2Date(activity_start_time));
+		holder.activityendtime.setText(DataTransform.timeStamp2Date(activity_finish_time));
+		holder.activitybegintime.setText(DataTransform.timeStamp2Date(activity_start_time));
 		holder.place.setText(activity_location);
 		holder.numsign.setText(numsign);
 		holder.numsigned.setText(numsigned);
+		holder.good.setText(good_num);
+		holder.comment.setText(comment_num);
+		holder.share.setText(share_num);
 
 		holder.firstImage.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -182,6 +189,32 @@ Log.i("info","face" + face.toString());
 				}
 			}
 		});
+
+		holder.good.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				clickGood.onGoodClicked();
+			}
+		});
+		holder.comment.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				clickComment.onCommnentClicked();
+			}
+		});
+		holder.share.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				clickShare.onShareClicked();
+			}
+		});
+		holder.xiala.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				clickXiala.onXialaClicked();
+			}
+		});
+
 
 		return convertView;
 	}
@@ -202,24 +235,40 @@ Log.i("info","face" + face.toString());
 	/***************************/
 
 	public interface ShowImages {
-		public void onShowImages(int id);
+		void onShowImages(int id);
 	}
 
-	public void setInterface(ShowImages showImages) {
+	public interface ClickGood {
+		void onGoodClicked();
+	}
+
+	public interface ClickComment {
+		void onCommnentClicked();
+	}
+
+	public interface ClickShare {
+		void onShareClicked();
+	}
+	public interface ClickXiala {
+		void onXialaClicked();
+	}
+
+	public void setInterface(ShowImages showImages,ClickGood clickGood,ClickComment clickComment,
+							 ClickShare clickShare,ClickXiala clickXiala) {
 		this.showImages = showImages;
+		this.clickGood = clickGood;
+		this.clickComment = clickComment;
+		this.clickShare = clickShare;
+		this.clickXiala = clickXiala;
 	}
 
 	class ViewHolder {
 		LinearLayout linearLayout;
-
-		TextView title, publictime, label, time, place,numsigned,
-				textdetail, titleattentionno,activityendtime,publishtime,
-				 personnickname,personlocation,activitybegintime,numsign,
+		TextView title, place,numsigned, activityendtime,publishtime,
+				personnickname,activitybegintime,numsign,
 				signupbegintime,signupendtime,gatherlocation;
-
-		ImageView head_image, firstImage, personheader;
-
-		TextView phone, message, comment, mappictureImageView, share;
-
+		//点赞 评论 分享
+		TextView good, comment, share;
+		ImageView head_image, firstImage, xiala;
 	}
 }

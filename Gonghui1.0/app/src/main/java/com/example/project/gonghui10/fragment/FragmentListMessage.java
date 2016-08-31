@@ -43,10 +43,11 @@ import java.util.ArrayList;
  * Created by 19950 on 2016/7/11.
  */
 public class FragmentListMessage extends Fragment implements ReFlashListView.IReflashListener,ReFlashListView.ILoadListener,MyBaseAdapter.ShowImages,
-        AdapterView.OnItemClickListener {
+        AdapterView.OnItemClickListener,MyBaseAdapter.ClickGood,MyBaseAdapter.ClickComment,MyBaseAdapter.ClickShare,
+        MyBaseAdapter.ClickXiala{
     private View view;
     String id,title,nick_name,publish_time,publish_location,sign_up_begin_time,sign_up_end_time,activity_start_time,
-            activity_finish_time,activity_location,numsign,numsigned,gatherlocation,face,firstImage,sImage;
+            activity_finish_time,activity_location,numsign,numsigned,gatherlocation,face,firstImage,sImage,good_num,comment_num,share_num;
     ArrayList<ActivityData> activity_list = new ArrayList<ActivityData>();
     private MyBaseAdapter adapter;
     private Context context;
@@ -100,11 +101,11 @@ public class FragmentListMessage extends Fragment implements ReFlashListView.IRe
         public void handleMessage(Message msg) {
             String json = msg.getData().getString("responseData");
 
-Log.i("info","这里接受来自服务器的数据："+json);
+            Log.i("info","这里接受来自服务器的数据："+json);
             try {
                 JSONArray response = new JSONArray(json);
                 for(int i=0;i<response.length();i++) {
-Log.i("info","进入循环体：i=" + i);
+                    Log.i("info","进入循环体：i=" + i);
                     JSONObject item = response.getJSONObject(i);
                     id = item.getString("id");
                     face = item.getString("face");
@@ -130,12 +131,15 @@ Log.i("info","进入循环体：i=" + i);
                     activity_location = item.getString("sPosition");
                     numsign = item.getString("sNumber");
                     numsigned = item.getString("sCurrentNumber");
-Log.i("info：","这里接受来自服务器的Item信息：" + id + title + nick_name + publish_time + publish_location + sign_up_begin_time
+                    good_num = item.getString("praise");
+                    comment_num = item.getString("comment");
+                    share_num = item.getString("transmit");
+                    Log.i("info：","这里接受来自服务器的Item信息：" + id + title + nick_name + publish_time + publish_location + sign_up_begin_time
                             + sign_up_end_time + activity_start_time + activity_finish_time + activity_location + numsigned + numsign);
 
                     ActivityData activity_item = new ActivityData(id,title,face,nick_name,publish_time,publish_location,
                             sign_up_begin_time,sign_up_end_time,activity_start_time,
-                            activity_finish_time,activity_location,numsign,numsigned,firstImage);
+                            activity_finish_time,activity_location,numsign,numsigned,firstImage,good_num,comment_num,share_num);
                     if(isLoad) {
                         activity_list.add(activity_item);
                     }else if(isReFlash){
@@ -149,13 +153,13 @@ Log.i("info：","这里接受来自服务器的Item信息：" + id + title + nic
             }
 
             for(int j=0;j<activity_list.size();j++ ){
-Log.i("info","以下是每条activity_list的数据：" + activity_list.get(j).toString());
+                Log.i("info","以下是每条activity_list的数据：" + activity_list.get(j).toString());
             }
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-Log.i("info","handler.postDelayed即将执行showList方法");
+                    Log.i("info","handler.postDelayed即将执行showList方法");
                     showList(activity_list);
                 }
             },1000);
@@ -165,13 +169,13 @@ Log.i("info","handler.postDelayed即将执行showList方法");
     private void showList(final ArrayList<ActivityData> data_list) {
         if(adapter==null){
             adapter = new MyBaseAdapter(getActivity(),data_list);
-            adapter.setInterface(this);
+            adapter.setInterface(this,this,this,this,this);
             listView = (ReFlashListView) view.findViewById(R.id.fragment_listview);
             listView.setInterface((ReFlashListView.IReflashListener) this);
             listView.setInterface((ReFlashListView.ILoadListener) this);
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(this);
-           // adapter.onDateChange(data_list);
+            // adapter.onDateChange(data_list);
             //listView.setOnClickListener(this);
             listView.reflashComplete();
 
@@ -341,6 +345,26 @@ Log.i("info","handler.postDelayed即将执行showList方法");
                 return null;
             }
         });
+
+    }
+
+    @Override
+    public void onGoodClicked() {
+        
+    }
+
+    @Override
+    public void onCommnentClicked() {
+
+    }
+
+    @Override
+    public void onShareClicked() {
+
+    }
+
+    @Override
+    public void onXialaClicked() {
 
     }
 }
