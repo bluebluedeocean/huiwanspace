@@ -43,7 +43,8 @@ import java.util.ArrayList;
  * Created by 19950 on 2016/7/11.
  */
 public class FragmentListMessage extends Fragment implements ReFlashListView.IReflashListener,ReFlashListView.ILoadListener,MyBaseAdapter.ShowImages,
-        AdapterView.OnItemClickListener,MyBaseAdapter.ClickGood {
+        AdapterView.OnItemClickListener,MyBaseAdapter.ClickGood,MyBaseAdapter.ClickComment,MyBaseAdapter.ClickShare,
+        MyBaseAdapter.ClickXiala{
     private View view;
     String id,title,nick_name,publish_time,publish_location,sign_up_begin_time,sign_up_end_time,activity_start_time,
             activity_finish_time,activity_location,numsign,numsigned,gatherlocation,face,firstImage,sImage,good_num,comment_num,share_num;
@@ -168,7 +169,7 @@ public class FragmentListMessage extends Fragment implements ReFlashListView.IRe
     private void showList(final ArrayList<ActivityData> data_list) {
         if(adapter==null){
             adapter = new MyBaseAdapter(getActivity(),data_list);
-            adapter.setInterface(this,this);
+            adapter.setInterface(this,this,this,this,this);
             listView = (ReFlashListView) view.findViewById(R.id.fragment_listview);
             listView.setInterface((ReFlashListView.IReflashListener) this);
             listView.setInterface((ReFlashListView.ILoadListener) this);
@@ -349,6 +350,21 @@ public class FragmentListMessage extends Fragment implements ReFlashListView.IRe
 
     @Override
     public void onGoodClicked() {
+        
+    }
+
+    @Override
+    public void onCommnentClicked() {
+
+    }
+
+    @Override
+    public void onShareClicked() {
+
+    }
+
+    @Override
+    public void onXialaClicked() {
 
     }
 }
