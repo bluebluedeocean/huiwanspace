@@ -28,11 +28,7 @@ import com.example.project.gonghui10.util.ImageViewPager;
 import com.example.project.gonghui10.util.Images;
 import com.example.project.gonghui10.util.StringCheck;
 import com.example.project.gonghui10.view.ReFlashListView;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
-import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
