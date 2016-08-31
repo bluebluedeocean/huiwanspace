@@ -350,7 +350,7 @@ public class FragmentListMessage extends Fragment implements ReFlashListView.IRe
 
     @Override
     public void onGoodClicked() {
-
+        
     }
 
     @Override
