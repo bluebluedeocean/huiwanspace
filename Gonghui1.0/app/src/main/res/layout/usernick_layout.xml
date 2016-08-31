@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:id="@+id/usernick_fg"
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/modify_refresher"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -17,14 +11,14 @@
     android:scrollbars="none"
     android:background="@color/gray">
 
-
-
     <!--最外层layout-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
+
 
 
         <!--头像Bar-->
@@ -43,7 +37,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:text="头像："
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"/>
@@ -54,8 +48,8 @@
                 android:layout_weight="3"
                 android:layout_height="match_parent">
                 <ImageView
-                    android:id="@+id/headpic_item"
-                    android:layout_marginTop="8dp"
+                    android:id="@+id/uersetting_headpic"
+                    android:layout_margin="8dp"
                     android:layout_width="80dp"
                     android:layout_height="80dp" />
             </LinearLayout>
@@ -77,7 +71,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:text="昵称："
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"/>
@@ -89,7 +83,8 @@
                 android:layout_height="match_parent">
                <TextView
                    android:id="@+id/usersetting_nick"
-                   android:textSize="14dp"
+                   android:text="不气龙"
+                   android:textSize="12dp"
                    android:gravity="center_vertical"
                    android:layout_width="match_parent"
                    android:layout_height="match_parent" />
@@ -113,7 +108,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:text="邮箱："
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"/>
@@ -125,7 +120,8 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:id="@+id/usersetting_email"
-                    android:textSize="14dp"
+                    android:text="1378172370@qq.com"
+                    android:textSize="12dp"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -149,7 +145,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:text="手机："
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"/>
@@ -161,7 +157,8 @@
                 android:layout_height="match_parent">
               <TextView
                   android:id="@+id/usersetting_mobile"
-                  android:textSize="14dp"
+                  android:text="18584320128"
+                  android:textSize="12dp"
                   android:gravity="center_vertical"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent" />
@@ -189,7 +186,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:text="城市："
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"/>
@@ -202,7 +199,7 @@
                 <TextView
                     android:id="@+id/usersetting_city"
                     android:text="吉林 长春"
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -227,7 +224,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:text="学校："
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"/>
@@ -239,7 +236,8 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:id="@+id/usersetting_school"
-                    android:textSize="14dp"
+                    android:text="吉林大学"
+                    android:textSize="12dp"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -264,7 +262,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:text="校区："
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"/>
@@ -276,7 +274,8 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:id="@+id/usersetting_college"
-                    android:textSize="14dp"
+                    android:text="南湖校区"
+                    android:textSize="12dp"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -301,7 +300,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:text="性别："
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"/>
@@ -313,7 +312,8 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:id="@+id/usersetting_sex"
-                    android:textSize="14dp"
+                    android:text="女"
+                    android:textSize="12dp"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -337,7 +337,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:text="个性签名："
-                    android:textSize="14dp"
+                    android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"/>
@@ -349,7 +349,8 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:id="@+id/usersetting_about"
-                    android:textSize="14dp"
+                    android:text="日了东北虎！"
+                    android:textSize="12dp"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -361,20 +362,18 @@
 
         <!--修改信息Bar-->
        <Button
-           android:id="@+id/modify_userinfo_btn"
+           android:id="@+id/modify_userinfo"
            android:text="修改信息"
-           android:textSize="14dp"
            android:layout_margin="8dp"
            android:textColor="@color/white"
            android:background="@drawable/ripple_blue"
            android:layout_width="match_parent"
            android:layout_height="wrap_content" />
 
+
+
     </LinearLayout>
 
 
 </ScrollView>
-</android.support.v4.widget.SwipeRefreshLayout>
-
-
 </LinearLayout>

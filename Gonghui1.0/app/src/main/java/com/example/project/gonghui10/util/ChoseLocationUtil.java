@@ -1,6 +1,7 @@
 package com.example.project.gonghui10.util;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,14 +9,24 @@ import java.util.Map;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+
 import android.app.Activity;
 import android.content.res.AssetManager;
+import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.project.gonghui10.model.CampusModel;
+import com.example.project.gonghui10.model.CityModel;
+import com.example.project.gonghui10.model.DistrictModel;
 import com.example.project.gonghui10.model.ProvinceModel;
 import com.example.project.gonghui10.model.SchoolModel;
+import com.example.project.gonghui10.net.Campus;
 import com.example.project.gonghui10.service.XmlParserHandler;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class ChoseLocationUtil extends Activity {
 

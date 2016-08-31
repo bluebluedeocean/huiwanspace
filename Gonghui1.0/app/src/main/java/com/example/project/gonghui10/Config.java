@@ -45,8 +45,6 @@ public class Config {
     public static final String ACTION_GETLISTPROVIENCE = "getListProvince";
     public static final String ACTION_GETCAMPUSBYSID = "getCampusBySid";
     public static final String ACTION_GETLISTSITUATIONIMAGE = "getListSituationImage";
-    public static final String ACTION_GETUSERINFO = "getUserInfo";
-    public static final String ACTION_MODIFYUSERINFO="modifyUserInfo";
 
     public static final int RESULT_STATUS_SUCCESS = 1;
     public static final int RESULT_STATUS_WRONG_PASSWORD = 2;

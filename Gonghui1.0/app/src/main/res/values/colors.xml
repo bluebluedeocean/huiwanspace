@@ -8,9 +8,8 @@
     <color name="red">#f00</color>
     <color name="green">#0f0</color>
     <color name="transparent">#00000000</color>
-    <color name="gray">#dcdcdc</color>
+    <color name="gray">#ccc</color>
     <color name="transparent_gray">#898989</color>
-    <color name="light">#f9f9f9</color>
 
 
     <color name="blue">#499BF7</color>
