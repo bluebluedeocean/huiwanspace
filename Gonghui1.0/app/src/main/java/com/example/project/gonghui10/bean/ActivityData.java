@@ -8,6 +8,78 @@ public class ActivityData {
 
     String id,title,face,nick_name,publish_time,publish_location,sign_up_begin_time,sign_up_end_time,activity_start_time,
             activity_finish_time,activity_location,numsign,numsigned,firstImage,good_num,comment_num,share_num;
+    int isDel,isPraise,isCollect,isJoin,isTransmit;
+
+    public ActivityData(String id, String title, String face,
+                        String nick_name, String publish_time, String publish_location,
+                        String sign_up_begin_time, String sign_up_end_time, String activity_start_time,
+                        String activity_finish_time, String activity_location, String numsign,
+                        String numsigned, String firstImage, String good_num, String comment_num,
+                        String share_num, int isDel, int isPraise, int isCollect, int isJoin,
+                        int isTransmit) {
+        this.id = id;
+        this.title = title;
+        this.face = face;
+        this.nick_name = nick_name;
+        this.publish_time = publish_time;
+        this.publish_location = publish_location;
+        this.sign_up_begin_time = sign_up_begin_time;
+        this.sign_up_end_time = sign_up_end_time;
+        this.activity_start_time = activity_start_time;
+        this.activity_finish_time = activity_finish_time;
+        this.activity_location = activity_location;
+        this.numsign = numsign;
+        this.numsigned = numsigned;
+        this.firstImage = firstImage;
+        this.good_num = good_num;
+        this.comment_num = comment_num;
+        this.share_num = share_num;
+        this.isDel = isDel;
+        this.isPraise = isPraise;
+        this.isCollect = isCollect;
+        this.isJoin = isJoin;
+        this.isTransmit = isTransmit;
+    }
+
+    public int getIsTransmit() {
+        return isTransmit;
+    }
+
+    public void setIsTransmit(int isTransmit) {
+        this.isTransmit = isTransmit;
+    }
+
+    public int getIsDel() {
+        return isDel;
+    }
+
+    public void setIsDel(int isDel) {
+        this.isDel = isDel;
+    }
+
+    public int getIsPraise() {
+        return isPraise;
+    }
+
+    public void setIsPraise(int isPraise) {
+        this.isPraise = isPraise;
+    }
+
+    public int getIsCollect() {
+        return isCollect;
+    }
+
+    public void setIsCollect(int isCollect) {
+        this.isCollect = isCollect;
+    }
+
+    public int getIsJoin() {
+        return isJoin;
+    }
+
+    public void setIsJoin(int isJoin) {
+        this.isJoin = isJoin;
+    }
 
     public String getFirstImage() {
         return firstImage;
