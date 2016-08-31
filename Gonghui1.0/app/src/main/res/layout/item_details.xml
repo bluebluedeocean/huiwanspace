@@ -100,16 +100,6 @@
                                 android:text="发布"
                                 android:textColor="@color/lightblue"
                                 android:textSize="13sp" />
-
-                          <!--  <TextView
-                                android:id="@id/publish_place"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="吉林大学南湖校区"
-                                android:textColor="#808080"
-                                android:textSize="13sp" />-->
-
-
                         </LinearLayout>
 
                     </LinearLayout>
@@ -128,8 +118,8 @@
                 <LinearLayout
                     android:id="@+id/bellow_top_group"
                     android:layout_width="match_parent"
+                    android:layout_marginEnd="10dp"
                     android:layout_height="0.5dip"
-                    android:layout_below="@+id/top_group"
                     android:layout_marginTop="5dip"
                     android:background="#808080"
                     android:orientation="horizontal" />
@@ -138,19 +128,11 @@
                     layout="@layout/item_details_describe_components"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/top_group">
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
 
+                    >
                 </include>
-
-                <com.example.project.gonghui10.view.NoScrollListView
-                    android:id="@+id/commentList"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:divider="#00000000"
-                    ></com.example.project.gonghui10.view.NoScrollListView>
-
             </LinearLayout>
         </ScrollView>
 
