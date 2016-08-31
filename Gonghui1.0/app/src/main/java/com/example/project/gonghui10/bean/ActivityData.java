@@ -7,7 +7,7 @@ public class ActivityData {
 
 
     String id,title,face,nick_name,publish_time,publish_location,sign_up_begin_time,sign_up_end_time,activity_start_time,
-            activity_finish_time,activity_location,numsign,numsigned,firstImage;
+            activity_finish_time,activity_location,numsign,numsigned,firstImage,good_num,comment_num,share_num;
 
     public String getFirstImage() {
         return firstImage;
@@ -38,6 +38,53 @@ public class ActivityData {
         this.firstImage = firstImage;
     }
 
+    public ActivityData(String id, String title, String face, String nick_name,
+                        String publish_time, String publish_location, String sign_up_begin_time,
+                        String sign_up_end_time, String activity_start_time, String activity_finish_time,
+                        String activity_location, String numsign, String numsigned, String firstImage,
+                        String good_num, String comment_num, String share_num) {
+        this.id = id;
+        this.title = title;
+        this.face = face;
+        this.nick_name = nick_name;
+        this.publish_time = publish_time;
+        this.publish_location = publish_location;
+        this.sign_up_begin_time = sign_up_begin_time;
+        this.sign_up_end_time = sign_up_end_time;
+        this.activity_start_time = activity_start_time;
+        this.activity_finish_time = activity_finish_time;
+        this.activity_location = activity_location;
+        this.numsign = numsign;
+        this.numsigned = numsigned;
+        this.firstImage = firstImage;
+        this.good_num = good_num;
+        this.comment_num = comment_num;
+        this.share_num = share_num;
+    }
+
+    public String getGood_num() {
+        return good_num;
+    }
+
+    public void setGood_num(String good_num) {
+        this.good_num = good_num;
+    }
+
+    public String getComment_num() {
+        return comment_num;
+    }
+
+    public void setComment_num(String comment_num) {
+        this.comment_num = comment_num;
+    }
+
+    public String getShare_num() {
+        return share_num;
+    }
+
+    public void setShare_num(String share_num) {
+        this.share_num = share_num;
+    }
 
     public void setNumsign(String numsign) {
         this.numsign = numsign;
