@@ -9,8 +9,8 @@ public class Url {
 
     public final static String showImages ="http://49.140.166.99:8080/eLife/api/server.php?act=getListSituationImage&sId=";
     public final static String server_url ="http://49.140.166.99:8080/eLife/api/server.php";
-    public final static String old_url = "http://49.140.166.99:8080/huiwanspace/api/appServer.php";
-    public final static String new_url = "http://115.28.240.191/api/appServer.php";
+    public final static String new_url = "http://49.140.166.99:8080/huiwanspace/api/appServer.php";
+    public final static String net_url = "http://115.28.240.191/api/appServer.php";
 
     public final static String app_url = new_url;
 }

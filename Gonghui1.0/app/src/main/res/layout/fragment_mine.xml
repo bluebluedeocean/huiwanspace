@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent" >
 
     <com.example.project.gonghui10.view.TitleBarView
         android:id="@+id/title_bar"
-        android:elevation="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/refresher">
-
 
     <com.example.project.gonghui10.view.CustomerScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/title_bar" >
-
 
         <!--最外层layout-->
         <LinearLayout
@@ -58,7 +50,8 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp" />
                 </LinearLayout>
-                <RelativeLayout
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="0dp"
                     android:layout_weight="9"
                     android:layout_height="match_parent">
@@ -66,18 +59,11 @@
                         android:id="@+id/headtext_nick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="不气龙"
                         android:layout_marginLeft="6dp"
                         android:textSize="16dp"
-                        android:hint="UserName"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentStart="true" />
-                    <TextView
-                        android:id="@+id/about_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/headtext_nick"
-                        android:layout_alignStart="@+id/headtext_nick" />
-                </RelativeLayout>
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
                 <ImageView
                     android:src="@mipmap/ic_chevron_right_black_36dp"
                     android:layout_width="0dp"
@@ -114,6 +100,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:textSize="12dp"
+                        android:text="134"
                         android:gravity="bottom|center"
                         />
                     <TextView
@@ -146,6 +133,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:textSize="12dp"
+                        android:text="106"
                         android:gravity="bottom|center"
                         />
                     <TextView
@@ -178,6 +166,7 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:textSize="12dp"
+                        android:text="58"
                         android:gravity="bottom|center"
                         />
                     <TextView
@@ -389,8 +378,6 @@
 
 
         </LinearLayout>
-
     </com.example.project.gonghui10.view.CustomerScrollView>
-    </android.support.v4.widget.SwipeRefreshLayout>
 
-</LinearLayout>
+</RelativeLayout>
