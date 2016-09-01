@@ -71,6 +71,8 @@
         <activity android:name=".activity.PraisedActActivity"></activity>
         <activity android:name=".activity.SettingActivity"></activity>
         <activity android:name=".activity.UserNickActivity"></activity>
+        <activity android:name=".activity.ModifyUserInfoActivity"></activity>
+
 
         <activity
             android:name="com.mob.tools.MobUIShell"
