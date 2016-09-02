@@ -18,22 +18,30 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.project.gonghui10.Config;
 import com.example.project.gonghui10.R;
+import com.example.project.gonghui10.net.textuserinfo;
+import com.example.project.gonghui10.util.ImageLoader;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 @SuppressLint("SdCardPath")
 public class ModifyUserInfoActivity extends Activity implements OnClickListener {
     private ImageView ivHead;//头像显示
+    private String face;
     private Button btnTakephoto;//拍照
     private Button btnPhotos;//相册
     private Bitmap head;//头像Bitmap
     private static String path = "/sdcard/myHead/";//sd路径
-    private Button backBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modifyuserinfo_layout);
+        init();
         modify();
     }
 
@@ -139,5 +147,29 @@ public class ModifyUserInfoActivity extends Activity implements OnClickListener 
         File file = new File(path);
         file.mkdirs();// 创建文件夹
         String fileName = path + "head.jpg";//图片
+    }
+
+    private void init() {
+        new textuserinfo(Config.getCacheSessionId(this), new textuserinfo.SuccessCallBack() {
+            @Override
+            public void onSuccess(org.json.JSONObject obj) {
+                try {
+                    setContent(obj);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new textuserinfo.FailCallBack() {
+            @Override
+            public void onFail(String msg) {
+
+            }
+        });
+    }
+
+    public void setContent(JSONObject content) throws JSONException {
+        ImageLoader il = new ImageLoader(this);
+        face = content.getString("face");
+        il.DisplayImage(face,ivHead);
     }
 }
