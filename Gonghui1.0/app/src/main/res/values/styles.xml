@@ -103,4 +103,15 @@
         <item name="android:textColor">@drawable/qq_constact_font</item>
         <item name="android:background">@drawable/qq_constact_all</item>
     </style>
+
+    <style name="Linearlayout_Style">
+        <item name="android:orientation">vertical</item>
+
+        <item name="android:gravity">center</item>
+
+        <item name="android:clickable">true</item>
+
+       <!-- <item name="android:onClick">onclick</item>-->
+
+    </style>
 </resources>
