@@ -118,7 +118,6 @@ public class SettingFragment extends Fragment {
             public void onClick(View v) {
                 Context context = getActivity().getApplicationContext();
                 Intent intent = new Intent(context,UserNickActivity.class);
-                intent.putExtra("face",face);
                 startActivity(intent);
             }
         });
