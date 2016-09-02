@@ -35,16 +35,13 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
 
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:background="@drawable/ripple_bg"
@@ -53,15 +50,17 @@
             >
             <TextView
                 android:text="头像"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/textView_width_2words"
                 android:layout_weight="75"
                 android:textSize="14dp"
                 android:gravity="center"
                 android:layout_height="match_parent" />
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="200"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_marginRight="@dimen/right_margin"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true">
                 <ImageView
                     android:id="@+id/uploadpic_iv"
                     android:layout_gravity="center"
@@ -90,13 +89,9 @@
                     android:background="@drawable/ripple_blue"
                     />
             </LinearLayout>
-        </LinearLayout>
+        </RelativeLayout>
 
-
-
-
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/ripple_bg"
@@ -105,76 +100,69 @@
             >
             <TextView
                 android:text="性别"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/textView_width_2words"
                 android:layout_weight="75"
                 android:textSize="14dp"
                 android:gravity="center"
                 android:layout_height="match_parent" />
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="200"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/right_margin"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true">
                <RadioGroup
                    android:orientation="horizontal"
-                   android:layout_marginRight="40dp"
-                   android:layout_width="match_parent"
+                   android:layout_width="wrap_content"
                    android:layout_height="match_parent">
                    <RadioButton
                        android:text="男"
                        android:textSize="14dp"
-                       android:layout_width="0dp"
-                       android:layout_weight="1"
+                       android:layout_width="wrap_content"
                        android:layout_height="match_parent" />
                    <RadioButton
                        android:text="女"
                        android:textSize="14dp"
-                       android:layout_width="0dp"
-                       android:layout_weight="1"
+                       android:layout_width="wrap_content"
                        android:layout_height="match_parent" />
                    <RadioButton
                        android:text="保密"
                        android:textSize="14dp"
-                       android:layout_width="0dp"
-                       android:layout_weight="1"
+                       android:layout_width="wrap_content"
                        android:layout_height="match_parent" />
                </RadioGroup>
             </LinearLayout>
-        </LinearLayout>
+        </RelativeLayout>
 
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/ripple_bg"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="@dimen/large_vertical_margin"
             android:clickable="true"
 
             >
             <TextView
                 android:text="昵称"
-                android:layout_width="0dp"
-                android:layout_weight="75"
+                android:layout_width="@dimen/textView_width_2words"
                 android:textSize="14dp"
                 android:gravity="center"
                 android:layout_height="match_parent" />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="200"
-                android:layout_height="match_parent">
                 <EditText
                     android:layout_width="230dp"
+                    android:layout_marginRight="@dimen/right_margin"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"/>
-            </LinearLayout>
-        </LinearLayout>
+                    android:layout_gravity="center"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" />
+        </RelativeLayout>
 
-
-        <LinearLayout
+        <RelativeLayout
             android:background="@drawable/ripple_bg"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_marginBottom="1dp"
+            android:layout_marginBottom="@dimen/small_vertical_margin"
             android:layout_height="48dp"
             android:clickable="true"
             >
@@ -182,21 +170,21 @@
                 android:text="省份"
                 android:textSize="14dp"
                 android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_weight="0.75"
+                android:layout_width="@dimen/textView_width_2words"
                 android:layout_height="match_parent" />
             <Spinner
-                android:layout_width="0dp"
-                android:layout_weight="2"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="12dp"></Spinner>
-        </LinearLayout>
+                android:layout_marginRight="@dimen/right_margin"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"></Spinner>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:background="@drawable/ripple_bg"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_marginBottom="1dp"
+            android:layout_marginBottom="@dimen/small_vertical_margin"
             android:layout_height="48dp"
             android:clickable="true"
             >
@@ -204,21 +192,21 @@
                 android:text="学校"
                 android:textSize="14dp"
                 android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_weight="0.75"
+                android:layout_width="@dimen/textView_width_2words"
                 android:layout_height="match_parent" />
             <Spinner
-                android:layout_width="0dp"
-                android:layout_weight="2"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="12dp"></Spinner>
-        </LinearLayout>
+                android:layout_marginRight="@dimen/right_margin"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"></Spinner>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:background="@drawable/ripple_bg"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_marginBottom="1dp"
+            android:layout_marginBottom="@dimen/small_vertical_margin"
             android:layout_height="48dp"
             android:clickable="true"
             >
@@ -226,16 +214,15 @@
                 android:text="校区"
                 android:textSize="14dp"
                 android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_weight="0.75"
+                android:layout_width="@dimen/textView_width_2words"
                 android:layout_height="match_parent" />
             <Spinner
-                android:layout_width="0dp"
-                android:layout_weight="2"
+                android:layout_width="230dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="12dp"></Spinner>
-        </LinearLayout>
-
+                android:layout_marginRight="@dimen/large_vertical_margin"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"></Spinner>
+        </RelativeLayout>
 
         <TextView
             android:clickable="true"
@@ -243,11 +230,9 @@
             android:gravity="center"
             android:hint="显示选择结果"
             android:background="@drawable/ripple_bg"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="@dimen/large_vertical_margin"
             android:layout_width="match_parent"
             android:layout_height="48dp" />
-
-
 
         <Button
             android:layout_gravity="center"
