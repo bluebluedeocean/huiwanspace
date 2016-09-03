@@ -152,7 +152,7 @@ public class ModifyUserInfoActivity extends Activity implements OnClickListener 
     private void init() {
         new textuserinfo(Config.getCacheSessionId(this), new textuserinfo.SuccessCallBack() {
             @Override
-            public void onSuccess(org.json.JSONObject obj) {
+            public void onSuccess(JSONObject obj) {
                 try {
                     setContent(obj);
                 } catch (JSONException e) {
