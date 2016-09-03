@@ -22,9 +22,7 @@
             android:orientation="vertical"
             >
             <include
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+
                 layout="@layout/fragment_activity_tabfoot" />
 
             <android.support.v4.view.ViewPager
