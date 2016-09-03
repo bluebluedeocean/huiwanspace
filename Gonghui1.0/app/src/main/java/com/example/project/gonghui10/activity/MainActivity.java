@@ -1,15 +1,16 @@
 package com.example.project.gonghui10.activity;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -21,25 +22,21 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.project.gonghui10.Config;
 import com.example.project.gonghui10.R;
+import com.example.project.gonghui10.fragment.ActivitysFragment;
+import com.example.project.gonghui10.fragment.CommunityFragment;
 import com.example.project.gonghui10.fragment.MainPageFragment;
 import com.example.project.gonghui10.fragment.SettingFragment;
 import com.example.project.gonghui10.util.SysApplication;
 
-import java.util.HashMap;
-
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
     protected static final String TAG = "MainActivity";
     private Context mContext;
-    private ImageButton mMain,mConstact,mDeynaimic,mSetting;
+    /**
+     * 分别是主页，圈子，活动，设置
+     */
+    private ImageButton mMain, mCommunity, mActivity,mSetting;
     private View mPopView;
     private View currentButton;
 
@@ -57,6 +54,8 @@ public class MainActivity extends Activity {
     private Fragment mfragment;
     MainPageFragment mainPageFragment;
     SettingFragment settingFragment;
+    CommunityFragment communityFragment;
+    ActivitysFragment activitysFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +79,8 @@ public class MainActivity extends Activity {
         mPopView= LayoutInflater.from(mContext).inflate(R.layout.app_exit, null);
         buttomBarGroup=(LinearLayout) findViewById(R.id.buttom_bar_group);
         mMain=(ImageButton) findViewById(R.id.buttom_main);
-        mConstact=(ImageButton) findViewById(R.id.buttom_constact);
-        mDeynaimic=(ImageButton) findViewById(R.id.buttom_deynaimic);
+        mCommunity =(ImageButton) findViewById(R.id.buttom_community);
+        mActivity =(ImageButton) findViewById(R.id.buttom_activity);
         mSetting=(ImageButton) findViewById(R.id.buttom_setting);
 
         app_cancle=(TextView) mPopView.findViewById(R.id.app_cancle);
@@ -91,13 +90,15 @@ public class MainActivity extends Activity {
 
     private void init(){
         mMain.setOnClickListener(mainPageOnClickListener);
-        mConstact.setOnClickListener(constactOnClickListener);
-        mDeynaimic.setOnClickListener(deynaimicOnClickListener);
+        mCommunity.setOnClickListener(communityOnClickListener);
+        mActivity.setOnClickListener(activityOnClickListener);
         mSetting.setOnClickListener(settingOnClickListener);
 
         mfragment = new Fragment();
         mainPageFragment=new MainPageFragment();
         settingFragment=new SettingFragment();
+        communityFragment = new CommunityFragment();
+        activitysFragment = new ActivitysFragment();
 
         mMain.performClick();
 
@@ -132,7 +133,7 @@ public class MainActivity extends Activity {
         @Override
         public void onClick(View v) {
             if(mfragment!=mainPageFragment) {
-                FragmentManager fm=getFragmentManager();
+                FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
                 if(!mainPageFragment.isAdded()) {
                     ft.hide(mfragment).add(R.id.fl_content,mainPageFragment).commit();
@@ -147,19 +148,19 @@ public class MainActivity extends Activity {
         }
     };
 
-    private View.OnClickListener constactOnClickListener=new View.OnClickListener() {
+    private View.OnClickListener communityOnClickListener =new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if(mfragment!=settingFragment) {
-                FragmentManager fm=getFragmentManager();
+            if(mfragment!=communityFragment) {
+                FragmentManager fm=getSupportFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
 
-                if(!settingFragment.isAdded()) {
-                    ft.hide(mfragment).add(R.id.fl_content,settingFragment).commit();
+                if(!communityFragment.isAdded()) {
+                    ft.hide(mfragment).add(R.id.fl_content,communityFragment).commit();
                 }else {
-                    ft.hide(mfragment).show(settingFragment).commit();
+                    ft.hide(mfragment).show(communityFragment).commit();
                 }
-                mfragment = settingFragment;
+                mfragment = communityFragment;
                 //ft.replace(R.id.fl_content, mainPageFragment,MainActivity.TAG);
                 setButton(v);
             }
@@ -173,19 +174,19 @@ public class MainActivity extends Activity {
         }
     };
 
-    private View.OnClickListener deynaimicOnClickListener=new View.OnClickListener() {
+    private View.OnClickListener activityOnClickListener =new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if(mfragment!=settingFragment) {
-                FragmentManager fm=getFragmentManager();
+            if(mfragment!= activitysFragment) {
+                FragmentManager fm=getSupportFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
 
-                if(!settingFragment.isAdded()) {
-                    ft.hide(mfragment).add(R.id.fl_content,settingFragment).commit();
+                if(!activitysFragment.isAdded()) {
+                    ft.hide(mfragment).add(R.id.fl_content, activitysFragment).commit();
                 }else {
-                    ft.hide(mfragment).show(settingFragment).commit();
+                    ft.hide(mfragment).show(activitysFragment).commit();
                 }
-                mfragment = settingFragment;
+                mfragment = activitysFragment;
                 //ft.replace(R.id.fl_content, mainPageFragment,MainActivity.TAG);
                 setButton(v);
             }
@@ -196,7 +197,7 @@ public class MainActivity extends Activity {
         @Override
         public void onClick(View v) {
             if(mfragment!=settingFragment) {
-                FragmentManager fm=getFragmentManager();
+                FragmentManager fm=getSupportFragmentManager();
                 FragmentTransaction ft=fm.beginTransaction();
 
                 if(!settingFragment.isAdded()) {
@@ -244,4 +245,5 @@ public class MainActivity extends Activity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
 }

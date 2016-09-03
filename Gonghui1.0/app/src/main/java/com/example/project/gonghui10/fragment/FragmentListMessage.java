@@ -1,12 +1,12 @@
 package com.example.project.gonghui10.fragment;
 
-import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,17 +22,14 @@ import com.example.project.gonghui10.adapter.MyBaseAdapter;
 import com.example.project.gonghui10.bean.ActivityData;
 import com.example.project.gonghui10.net.ImageLoad;
 import com.example.project.gonghui10.net.ItemImages;
+import com.example.project.gonghui10.net.Praise;
 import com.example.project.gonghui10.url.Url;
 import com.example.project.gonghui10.util.AutoListView;
 import com.example.project.gonghui10.util.ImageViewPager;
 import com.example.project.gonghui10.util.Images;
 import com.example.project.gonghui10.util.StringCheck;
 import com.example.project.gonghui10.view.ReFlashListView;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
-import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,7 +44,8 @@ public class FragmentListMessage extends Fragment implements ReFlashListView.IRe
         MyBaseAdapter.ClickXiala{
     private View view;
     String id,title,nick_name,publish_time,publish_location,sign_up_begin_time,sign_up_end_time,activity_start_time,
-            activity_finish_time,activity_location,numsign,numsigned,gatherlocation,face,firstImage,sImage,good_num,comment_num,share_num;
+            activity_finish_time,activity_location,numsign,numsigned,face,firstImage,sImage,good_num,comment_num,share_num;
+    int isDel,isPraise,isCollect,isJoin,isTransmit;
     ArrayList<ActivityData> activity_list = new ArrayList<ActivityData>();
     private MyBaseAdapter adapter;
     private Context context;
@@ -134,12 +132,20 @@ public class FragmentListMessage extends Fragment implements ReFlashListView.IRe
                     good_num = item.getString("praise");
                     comment_num = item.getString("comment");
                     share_num = item.getString("transmit");
+                    isTransmit = item.getInt("isTransmit");
+                    if(isTransmit!=0)
+                        isDel = item.getInt("isDel");
+                    else isDel = 0;
+                    isPraise = item.getInt("isPraise");
+                    isJoin = item.getInt("isJoin");
+                    isCollect = item.getInt("isCollect");
                     Log.i("info：","这里接受来自服务器的Item信息：" + id + title + nick_name + publish_time + publish_location + sign_up_begin_time
                             + sign_up_end_time + activity_start_time + activity_finish_time + activity_location + numsigned + numsign);
 
                     ActivityData activity_item = new ActivityData(id,title,face,nick_name,publish_time,publish_location,
                             sign_up_begin_time,sign_up_end_time,activity_start_time,
-                            activity_finish_time,activity_location,numsign,numsigned,firstImage,good_num,comment_num,share_num);
+                            activity_finish_time,activity_location,numsign,numsigned,firstImage,good_num,comment_num,share_num,isDel,isPraise,isCollect,
+                            isJoin,isCollect);
                     if(isLoad) {
                         activity_list.add(activity_item);
                     }else if(isReFlash){
@@ -348,23 +354,37 @@ public class FragmentListMessage extends Fragment implements ReFlashListView.IRe
 
     }
 
-    @Override
-    public void onGoodClicked() {
-        
-    }
 
     @Override
-    public void onCommnentClicked() {
+    public void onCommnentClicked(int id) {
 
     }
 
     @Override
-    public void onShareClicked() {
+    public void onGoodClicked(int id, final int position) {
+        activity_list.get(position);
+        new Praise(id + "", Config.getCacheSessionId(getActivity()), new Praise.SuccessCallBack() {
+            @Override
+            public void onSuccess(String message) {
+                Toast.makeText(getActivity(),message+"",Toast.LENGTH_SHORT).show();
+                activity_list.get(position).setIsPraise(1);
+                adapter.onDateChange(activity_list);
+            }
+        }, new Praise.FailCallBack() {
+            @Override
+            public void onFail(String message) {
+                Toast.makeText(getActivity(),message+"",Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    public void onShareClicked(int id) {
 
     }
 
     @Override
-    public void onXialaClicked() {
+    public void onXialaClicked(int id) {
 
     }
 }

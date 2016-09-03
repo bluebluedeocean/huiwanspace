@@ -23,7 +23,7 @@
         <RelativeLayout style="@style/ButtomBar" >
 
             <ImageButton
-                android:id="@+id/buttom_constact"
+                android:id="@+id/buttom_community"
                 style="@style/ButtomBarImgBtn"
                 android:background="@drawable/bar_constact"
                 android:contentDescription="@string/app_name" />
@@ -32,7 +32,7 @@
         <RelativeLayout style="@style/ButtomBar" >
 
             <ImageButton
-                android:id="@+id/buttom_deynaimic"
+                android:id="@+id/buttom_activity"
                 style="@style/ButtomBarImgBtn"
                 android:background="@drawable/bar_deynaimic"
                 android:contentDescription="@string/app_name" />

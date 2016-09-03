@@ -43,6 +43,7 @@ public class MyBaseAdapter extends BaseAdapter implements AbsListView.OnScrollLi
 
 	String id,title,face,nick_name,publish_time,publish_location,sign_up_begin_time,sign_up_end_time,activity_start_time,
 			activity_finish_time,activity_location,numsign,numsigned,firstPicture,good_num,comment_num,share_num;
+	int isDel,isPraise,isCollect,isJoin;
 
 	public MyBaseAdapter(Context context, ArrayList<ActivityData> activity_list) {
 		this.context = context;
@@ -111,6 +112,12 @@ public class MyBaseAdapter extends BaseAdapter implements AbsListView.OnScrollLi
 		good_num = arraydatas.getGood_num();
 		comment_num = arraydatas.getComment_num();
 		share_num = arraydatas.getShare_num();
+		isDel = arraydatas.getIsDel();
+		isCollect = arraydatas.getIsCollect();
+		isJoin = arraydatas.getIsJoin();
+		isPraise = arraydatas.getIsPraise();
+
+		Log.i("info","isPraise  ******************************" + isPraise + "*********************************\n");
 
 		Log.i("info","adapter中的数据：" + id + title + nick_name + publish_time + publish_location + sign_up_begin_time + sign_up_end_time + activity_start_time
 				+ activity_finish_time + activity_location + numsigned + numsign + "    ****    ");
@@ -176,6 +183,10 @@ public class MyBaseAdapter extends BaseAdapter implements AbsListView.OnScrollLi
 		holder.numsign.setText(numsign);
 		holder.numsigned.setText(numsigned);
 		holder.good.setText(good_num);
+		if (isPraise!=1) {
+			Log.i("info","isPraise  **********************good.setEnaable(true)" + isPraise + "*********************************\n");
+			holder.good.setEnabled(true);
+		}
 		holder.comment.setText(comment_num);
 		holder.share.setText(share_num);
 
@@ -193,25 +204,25 @@ public class MyBaseAdapter extends BaseAdapter implements AbsListView.OnScrollLi
 		holder.good.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				clickGood.onGoodClicked();
+				clickGood.onGoodClicked(Integer.parseInt(arraydatas.getId()),position);
 			}
 		});
 		holder.comment.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				clickComment.onCommnentClicked();
+				clickComment.onCommnentClicked(Integer.parseInt(arraydatas.getId()));
 			}
 		});
 		holder.share.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				clickShare.onShareClicked();
+				clickShare.onShareClicked(Integer.parseInt(arraydatas.getId()));
 			}
 		});
 		holder.xiala.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				clickXiala.onXialaClicked();
+				clickXiala.onXialaClicked(Integer.parseInt(arraydatas.getId()));
 			}
 		});
 
@@ -239,18 +250,18 @@ public class MyBaseAdapter extends BaseAdapter implements AbsListView.OnScrollLi
 	}
 
 	public interface ClickGood {
-		void onGoodClicked();
+		void onGoodClicked(int id,int position);
 	}
 
 	public interface ClickComment {
-		void onCommnentClicked();
+		void onCommnentClicked(int id);
 	}
 
 	public interface ClickShare {
-		void onShareClicked();
+		void onShareClicked(int id);
 	}
 	public interface ClickXiala {
-		void onXialaClicked();
+		void onXialaClicked(int id);
 	}
 
 	public void setInterface(ShowImages showImages,ClickGood clickGood,ClickComment clickComment,

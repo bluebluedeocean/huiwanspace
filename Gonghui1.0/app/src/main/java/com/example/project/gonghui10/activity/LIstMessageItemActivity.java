@@ -200,5 +200,4 @@ public class LIstMessageItemActivity extends Activity {
             }
         });
     }
-
 }
