@@ -11,7 +11,7 @@
     <color name="gray">#dcdcdc</color>
     <color name="transparent_gray">#898989</color>
     <color name="light">#f9f9f9</color>
-
+    <color name="textcolor">#ed6d48</color>
 
     <color name="blue">#499BF7</color>
     <color name="whites">#ffffff</color>
@@ -30,12 +30,12 @@
     <color name="deepcolor">#faaa5f</color>
     <color name="shadowcolor">#333333</color>
     <color name="naming">#ABABAB</color>
-    <color name="background">#272727</color>
+    <color name="background">#ededed</color>
     <color name="orange_yellow">#9b9ba0</color>
     <drawable name="semi_black">#80000000</drawable>
     <color name="remote_connect_text">#FFe78018</color>
     <color name="remote_disconnect_text">#FF901821</color>
-
+    <color name="main_color_white">#ffffff</color>
 
     <color name="white">#FFFFFF</color> <!--白色 -->
     <color name="ivory">#FFFFF0</color> <!--象牙色 -->
