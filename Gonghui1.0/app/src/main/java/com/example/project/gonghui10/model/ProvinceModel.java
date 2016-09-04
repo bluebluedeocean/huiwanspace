@@ -9,10 +9,7 @@ public class ProvinceModel {
 	 */
 	private String id;
 	private List<SchoolModel> schoolList;
-
-
 	private List<CityModel> cityList;
-	
 	public ProvinceModel() {
 		super();
 	}

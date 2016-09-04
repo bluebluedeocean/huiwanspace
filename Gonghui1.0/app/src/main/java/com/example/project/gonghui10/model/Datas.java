@@ -1,6 +1,5 @@
 package com.example.project.gonghui10.model;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+
 
 
 import java.net.URL;

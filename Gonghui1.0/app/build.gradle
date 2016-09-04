@@ -32,12 +32,14 @@ dependencies {
     compile name: 'SMSSDK-2.1.1', ext: 'aar'
     compile name: 'SMSSDKGUI-2.1.1', ext: 'aar'
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.0.0'
     compile files('libs/zxing-1.6.jar')
     compile 'com.android.support:support-v4:23.0.0'
     compile files('libs/android-async-http-1.4.5.jar')
     compile files('libs/smscaptcha_v_1_4.jar')
-    // https://mvnrepository.com/artifact/com.alibaba/fastjson
-    compile 'com.alibaba:fastjson:1.2.12'
     compile project(':volly-1.0.11')
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.android.support:recyclerview-v7:23.1.0'
+    compile 'com.android.support:design:23.1.0'
+    compile 'com.android.support:cardview-v7:23.1.0'
+    compile 'com.bartoszlipinski.recyclerviewheader:library:1.2.0'
 }

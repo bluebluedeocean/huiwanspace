@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.project.gonghui10">
 
-<!--短信验证sdk-->
+    <!-- 短信验证sdk -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -13,22 +13,22 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
@@ -48,37 +48,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
-        <activity android:name=".activity.LoginActivity"></activity>
-        <activity android:name=".activity.ChangePasswordActivity"></activity>
-        <activity android:name=".activity.FindPasswordActivity"></activity>
-        <activity android:name=".activity.RegisterActivity"></activity>
-        <activity android:name=".activity.WaterCameraActivity"></activity>
-        <activity android:name=".activity.WaterPhotoActivity"></activity>
-        <activity android:name=".util.Images"></activity>
-        <activity android:name=".util.ImageViewPager"></activity>
-        <activity android:name=".activity.LIstMessageItemActivity"></activity>
-        <activity android:name=".activity.CaptchaActivity"></activity>
-        <activity android:name=".activity.ChoseLocationActivity"></activity>
-        <activity android:name=".activity.ActHeadItemActivity"></activity>
-        <activity android:name=".activity.FansHeadItemActivity"></activity>
-        <activity android:name=".activity.FollowHeadItemActivity"></activity>
-        <activity android:name=".activity.GradeActivity"></activity>
-        <activity android:name=".activity.JoinedActActivity"></activity>
-        <activity android:name=".activity.LikedActActivity"></activity>
-        <activity android:name=".activity.MeActivity"></activity>
-        <activity android:name=".activity.PraisedActActivity"></activity>
-        <activity android:name=".activity.SettingActivity"></activity>
-        <activity android:name=".activity.UserNickActivity"></activity>
-        <activity android:name=".activity.ModifyUserInfoActivity"></activity>
-
-
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.ChangePasswordActivity" />
+        <activity android:name=".activity.FindPasswordActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.WaterCameraActivity" />
+        <activity android:name=".activity.WaterPhotoActivity" />
+        <activity android:name=".util.Images" />
+        <activity android:name=".util.ImageViewPager" />
+        <activity android:name=".activity.LIstMessageItemActivity" />
+        <activity android:name=".activity.CaptchaActivity" />
+        <activity android:name=".activity.ChoseLocationActivity" />
+        <activity android:name=".activity.ActHeadItemActivity" />
+        <activity android:name=".activity.FansHeadItemActivity" />
+        <activity android:name=".activity.FollowHeadItemActivity" />
+        <activity android:name=".activity.GradeActivity" />
+        <activity android:name=".activity.JoinedActActivity" />
+        <activity android:name=".activity.LikedActActivity" />
+        <activity android:name=".activity.MeActivity" />
+        <activity android:name=".activity.PraisedActActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.UserNickActivity" />
+        <activity android:name=".activity.ModifyUserInfoActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".activity.Main2Activity"></activity>
     </application>
 
 </manifest>
