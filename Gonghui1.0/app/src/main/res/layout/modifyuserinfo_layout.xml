@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".activity.ModifyUserInfoActivity">
     <LinearLayout
         android:clickable="true"
         android:layout_width="match_parent"
@@ -54,48 +56,82 @@
                 android:layout_weight="75"
                 android:textSize="14dp"
                 android:gravity="center"
-                android:layout_height="match_parent" />
-            <LinearLayout
+                android:layout_height="match_parent"
+                android:id="@+id/textView3" />
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_marginRight="@dimen/right_margin"
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true">
-                <ImageView
-                    android:id="@+id/uploadpic_iv"
-                    android:layout_gravity="center"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp" />
-                <Button
-                    android:text="拍照"
-                    android:textSize="14dp"
-                    android:layout_marginLeft="12dp"
-                    android:textColor="@color/light"
-                    android:id="@+id/takepohoto_btn"
-                    android:layout_gravity="center"
-                    android:layout_width="72dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/ripple_blue"
-                    />
-                <Button
-                    android:layout_marginLeft="6dp"
-                    android:textColor="@color/light"
-                    android:textSize="14dp"
-                    android:text="相册"
-                    android:id="@+id/selectfromgrally_btn"
-                    android:layout_gravity="center"
-                    android:layout_width="72dp"
-                    android:layout_height="32dp"
-                    android:background="@drawable/ripple_blue"
-                    />
-            </LinearLayout>
+                android:layout_alignParentEnd="true"
+                android:id="@+id/relativeLayout">
+
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/uploadpic_iv"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/right_margin"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="26dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/selectfromgrally_btn" />
+
+            <Button
+                android:textColor="@color/light"
+                android:textSize="14dp"
+                android:text="相册"
+                android:id="@+id/selectfromgrally_btn"
+                android:layout_gravity="center"
+                android:layout_width="70dp"
+                android:layout_height="32dp"
+                android:background="@drawable/ripple_blue"
+                android:layout_alignBottom="@+id/uploadpic_iv"
+                android:layout_toStartOf="@+id/relativeLayout" />
+
+            <Button
+                android:text="拍照"
+                android:textSize="14dp"
+                android:textColor="@color/light"
+                android:id="@+id/takepohoto_btn"
+                android:layout_gravity="center"
+                android:layout_width="70dp"
+                android:layout_height="32dp"
+                android:background="@drawable/ripple_blue"
+                android:layout_alignTop="@+id/uploadpic_iv"
+                android:layout_toStartOf="@+id/relativeLayout" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/light"
+            android:layout_marginBottom="@dimen/small_vertical_margin"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+
+            >
+            <TextView
+                android:text="昵称"
+                android:layout_width="@dimen/textView_width_2words"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+            <EditText
+                android:layout_width="180dp"
+                android:layout_marginRight="@dimen/right_margin"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/ripple_bg"
-            android:layout_marginBottom="1dp"
+            android:layout_marginBottom="@dimen/large_vertical_margin"
             android:clickable="true"
             >
             <TextView
@@ -114,48 +150,28 @@
                 android:layout_alignParentEnd="true">
                <RadioGroup
                    android:orientation="horizontal"
-                   android:layout_width="wrap_content"
+                   android:layout_width="180dp"
                    android:layout_height="match_parent">
                    <RadioButton
                        android:text="男"
                        android:textSize="14dp"
-                       android:layout_width="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
                        android:layout_height="match_parent" />
                    <RadioButton
                        android:text="女"
                        android:textSize="14dp"
-                       android:layout_width="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
                        android:layout_height="match_parent" />
                    <RadioButton
                        android:text="保密"
                        android:textSize="14dp"
-                       android:layout_width="wrap_content"
+                       android:layout_width="0dp"
+                       android:layout_weight="1.5"
                        android:layout_height="match_parent" />
                </RadioGroup>
             </LinearLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@drawable/ripple_bg"
-            android:layout_marginBottom="@dimen/large_vertical_margin"
-            android:clickable="true"
-
-            >
-            <TextView
-                android:text="昵称"
-                android:layout_width="@dimen/textView_width_2words"
-                android:textSize="14dp"
-                android:gravity="center"
-                android:layout_height="match_parent" />
-                <EditText
-                    android:layout_width="230dp"
-                    android:layout_marginRight="@dimen/right_margin"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -173,7 +189,8 @@
                 android:layout_width="@dimen/textView_width_2words"
                 android:layout_height="match_parent" />
             <Spinner
-                android:layout_width="230dp"
+                android:id="@+id/spinner1"
+                android:layout_width="180dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/right_margin"
                 android:layout_alignParentTop="true"
@@ -195,7 +212,8 @@
                 android:layout_width="@dimen/textView_width_2words"
                 android:layout_height="match_parent" />
             <Spinner
-                android:layout_width="230dp"
+                android:id="@+id/spinner2"
+                android:layout_width="180dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/right_margin"
                 android:layout_alignParentTop="true"
@@ -217,7 +235,8 @@
                 android:layout_width="@dimen/textView_width_2words"
                 android:layout_height="match_parent" />
             <Spinner
-                android:layout_width="230dp"
+                android:id="@+id/spinner3"
+                android:layout_width="180dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/large_vertical_margin"
                 android:layout_alignParentTop="true"
@@ -225,6 +244,7 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/resultTv"
             android:clickable="true"
             android:textSize="14dp"
             android:gravity="center"
@@ -236,7 +256,7 @@
 
         <Button
             android:layout_gravity="center"
-            android:id="@+id/backtouserinfo_btn"
+            android:id="@+id/sureBtn"
             android:layout_width="match_parent"
             android:layout_margin="12dp"
             android:textSize="14dp"
