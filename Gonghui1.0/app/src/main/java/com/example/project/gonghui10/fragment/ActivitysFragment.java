@@ -25,7 +25,7 @@ public class ActivitysFragment extends Fragment implements View.OnClickListener{
     private View mBaseView;
     private TitleBarView mTitleBarView;
     private ViewPager viewPager;
-    private SwipeRefreshLayout refreshLayout;
+    //private SwipeRefreshLayout refreshLayout;
     private ActivityFragment01 activityFragment01;
     private ActivityFragment02 activityFragment02;
     private ActivityFragment03 activityFragment03;
@@ -42,11 +42,11 @@ public class ActivitysFragment extends Fragment implements View.OnClickListener{
         settextview();
         findView();
         init();
-        refresh();
+        //refresh();
         return mBaseView;
     }
 
-    private void refresh() {
+    /*private void refresh() {
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -54,12 +54,12 @@ public class ActivitysFragment extends Fragment implements View.OnClickListener{
                 refreshLayout.setRefreshing(false);
             }
         });
-    }
+    }*/
 
     private void findView() {
         viewPager = (ViewPager) mBaseView.findViewById(R.id.activity_viewpager);
         mTitleBarView = (TitleBarView) mBaseView.findViewById(R.id.title_bar);
-        refreshLayout = (SwipeRefreshLayout) mBaseView.findViewById(R.id.refresher);
+       // refreshLayout = (SwipeRefreshLayout) mBaseView.findViewById(R.id.refresher);
 
         activityFragment01 = new ActivityFragment01();
         activityFragment02 = new ActivityFragment02();
