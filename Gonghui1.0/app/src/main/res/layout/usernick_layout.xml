@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:layout_width="match_parent"
-    android:id="@+id/usernick_fg"
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android" >
@@ -43,7 +42,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="none"
-    android:background="@color/gray">
+    >
 
 
 
@@ -69,6 +68,7 @@
 
                 <TextView
                     android:text="头像"
+                    android:textColor="#000"
                     android:textSize="14dp"
                     android:layout_width="@dimen/textView_width_2words"
                     android:layout_height="match_parent"
@@ -98,6 +98,7 @@
             android:background="@drawable/ripple_bg">
 
                 <TextView
+                    android:textColor="#000"
                     android:text="昵称"
                     android:textSize="14dp"
                     android:layout_width="@dimen/textView_width_2words"
@@ -106,6 +107,7 @@
                     android:id="@+id/textView" />
 
                <TextView
+                   android:textColor="#000"
                    android:gravity="center_vertical"
                    android:id="@+id/usersetting_nick"
                    android:textSize="14dp"
@@ -128,6 +130,7 @@
             android:background="@drawable/ripple_bg">
 
                 <TextView
+                    android:textColor="#000"
                     android:text="邮箱"
                     android:textSize="14dp"
                     android:layout_width="@dimen/textView_width_2words"
@@ -135,6 +138,7 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:textColor="#000"
                     android:id="@+id/usersetting_email"
                     android:layout_marginRight="@dimen/right_margin"
                     android:textSize="14dp"
@@ -157,6 +161,7 @@
             android:background="@drawable/ripple_bg">
 
                 <TextView
+                    android:textColor="#000"
                     android:text="手机"
                     android:textSize="14dp"
                     android:layout_width="@dimen/textView_width_2words"
@@ -166,6 +171,7 @@
 
 
               <TextView
+                  android:textColor="#000"
                   android:id="@+id/usersetting_mobile"
                   android:textSize="14dp"
                   android:gravity="center_vertical"
@@ -193,6 +199,7 @@
             android:background="@drawable/ripple_bg">
 
                 <TextView
+                    android:textColor="#000"
                     android:text="城市"
                     android:textSize="14dp"
                     android:layout_width="@dimen/textView_width_2words"
@@ -200,6 +207,7 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:textColor="#000"
                     android:layout_marginRight="@dimen/right_margin"
                     android:id="@+id/usersetting_city"
                     android:textSize="14dp"
@@ -224,6 +232,7 @@
             android:background="@drawable/ripple_bg">
 
                 <TextView
+                    android:textColor="#000"
                     android:text="学校"
                     android:textSize="14dp"
                     android:layout_width="@dimen/textView_width_2words"
@@ -231,6 +240,7 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:textColor="#000"
                     android:layout_marginRight="@dimen/right_margin"
                     android:id="@+id/usersetting_school"
                     android:textSize="14dp"
@@ -255,6 +265,7 @@
             android:background="@drawable/ripple_bg">
 
                 <TextView
+                    android:textColor="#000"
                     android:text="校区"
                     android:textSize="14dp"
                     android:layout_width="@dimen/textView_width_2words"
@@ -262,6 +273,7 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:textColor="#000"
                     android:layout_marginRight="@dimen/right_margin"
                     android:id="@+id/usersetting_college"
                     android:textSize="14dp"
@@ -286,6 +298,7 @@
             android:background="@drawable/ripple_bg">
 
                 <TextView
+                    android:textColor="#000"
                     android:text="性别"
                     android:textSize="14dp"
                     android:layout_width="@dimen/textView_width_2words"
@@ -293,6 +306,7 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:textColor="#000"
                     android:layout_marginRight="@dimen/right_margin"
                     android:id="@+id/usersetting_sex"
                     android:textSize="14dp"
@@ -315,6 +329,7 @@
             android:background="@drawable/ripple_bg">
 
                 <TextView
+                    android:textColor="#000"
                     android:text="简介 "
                     android:textSize="14dp"
                     android:layout_width="@dimen/textView_width_2words"
@@ -322,6 +337,7 @@
                     android:gravity="center"/>
 
                 <TextView
+                    android:textColor="#000"
                     android:layout_marginRight="@dimen/right_margin"
                     android:id="@+id/usersetting_about"
                     android:textSize="14dp"

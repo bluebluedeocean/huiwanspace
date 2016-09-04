@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:context=".activity.ModifyUserInfoActivity">
+    >
     <LinearLayout
         android:clickable="true"
         android:layout_width="match_parent"
@@ -35,15 +35,19 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <LinearLayout
+        android:layout_marginLeft="@dimen/large_vertical_margin"
+        android:layout_marginRight="@dimen/large_vertical_margin"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
 
         <RelativeLayout
+            android:layout_marginTop="@dimen/large_vertical_margin"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:background="@drawable/ripple_bg"
@@ -51,6 +55,7 @@
             android:clickable="true"
             >
             <TextView
+                android:textColor="#000"
                 android:text="头像"
                 android:layout_width="@dimen/textView_width_2words"
                 android:layout_weight="75"
@@ -113,12 +118,99 @@
 
             >
             <TextView
+                android:textColor="#000"
                 android:text="昵称"
                 android:layout_width="@dimen/textView_width_2words"
                 android:textSize="14dp"
                 android:gravity="center"
                 android:layout_height="match_parent" />
             <EditText
+                android:textColor="#000"
+                android:id="@+id/inputName_Tv"
+                android:layout_width="180dp"
+                android:layout_marginRight="@dimen/right_margin"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/light"
+            android:layout_marginBottom="@dimen/small_vertical_margin"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+
+            >
+            <TextView
+                android:textColor="#000"
+                android:text="手机"
+                android:layout_width="@dimen/textView_width_2words"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+            <EditText
+                android:textColor="#000"
+                android:id="@+id/inputPhone_Tv"
+                android:layout_width="180dp"
+                android:layout_marginRight="@dimen/right_margin"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/light"
+            android:layout_marginBottom="@dimen/small_vertical_margin"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+
+            >
+            <TextView
+                android:textColor="#000"
+                android:text="邮箱"
+                android:layout_width="@dimen/textView_width_2words"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+            <EditText
+                android:textColor="#000"
+                android:id="@+id/inputEmail_Tv"
+                android:layout_width="180dp"
+                android:layout_marginRight="@dimen/right_margin"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/light"
+            android:layout_marginBottom="@dimen/large_vertical_margin"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+
+            >
+            <TextView
+                android:textColor="#000"
+                android:text="密码"
+                android:layout_width="@dimen/textView_width_2words"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+            <EditText
+                android:textColor="#000"
+                android:id="@+id/inputPassword_Tv"
                 android:layout_width="180dp"
                 android:layout_marginRight="@dimen/right_margin"
                 android:layout_height="wrap_content"
@@ -135,43 +227,22 @@
             android:clickable="true"
             >
             <TextView
+                android:textColor="#000"
                 android:text="性别"
                 android:layout_width="@dimen/textView_width_2words"
                 android:layout_weight="75"
                 android:textSize="14dp"
                 android:gravity="center"
                 android:layout_height="match_parent" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+            <Spinner
+                android:textColor="#000"
+                android:id="@+id/sex_spinner"
+                android:layout_width="180dp"
                 android:layout_marginRight="@dimen/right_margin"
+                android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true">
-               <RadioGroup
-                   android:orientation="horizontal"
-                   android:layout_width="180dp"
-                   android:layout_height="match_parent">
-                   <RadioButton
-                       android:text="男"
-                       android:textSize="14dp"
-                       android:layout_width="0dp"
-                       android:layout_weight="1"
-                       android:layout_height="match_parent" />
-                   <RadioButton
-                       android:text="女"
-                       android:textSize="14dp"
-                       android:layout_width="0dp"
-                       android:layout_weight="1"
-                       android:layout_height="match_parent" />
-                   <RadioButton
-                       android:text="保密"
-                       android:textSize="14dp"
-                       android:layout_width="0dp"
-                       android:layout_weight="1.5"
-                       android:layout_height="match_parent" />
-               </RadioGroup>
-            </LinearLayout>
+                android:layout_alignParentEnd="true"></Spinner>
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -183,12 +254,14 @@
             android:clickable="true"
             >
             <TextView
+                android:textColor="#000"
                 android:text="省份"
                 android:textSize="14dp"
                 android:gravity="center"
                 android:layout_width="@dimen/textView_width_2words"
                 android:layout_height="match_parent" />
             <Spinner
+                android:textColor="#000"
                 android:id="@+id/spinner1"
                 android:layout_width="180dp"
                 android:layout_height="match_parent"
@@ -206,12 +279,14 @@
             android:clickable="true"
             >
             <TextView
+                android:textColor="#000"
                 android:text="学校"
                 android:textSize="14dp"
                 android:gravity="center"
                 android:layout_width="@dimen/textView_width_2words"
                 android:layout_height="match_parent" />
             <Spinner
+                android:textColor="#000"
                 android:id="@+id/spinner2"
                 android:layout_width="180dp"
                 android:layout_height="match_parent"
@@ -229,12 +304,14 @@
             android:clickable="true"
             >
             <TextView
+                android:textColor="#000"
                 android:text="校区"
                 android:textSize="14dp"
                 android:gravity="center"
                 android:layout_width="@dimen/textView_width_2words"
                 android:layout_height="match_parent" />
             <Spinner
+                android:textColor="#000"
                 android:id="@+id/spinner3"
                 android:layout_width="180dp"
                 android:layout_height="match_parent"
@@ -243,22 +320,41 @@
                 android:layout_alignParentEnd="true"></Spinner>
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/resultTv"
-            android:clickable="true"
-            android:textSize="14dp"
-            android:gravity="center"
-            android:hint="显示选择结果"
-            android:background="@drawable/ripple_bg"
-            android:layout_marginTop="@dimen/large_vertical_margin"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp" />
+            android:layout_height="96dp"
+            android:background="@color/light"
+            android:layout_marginBottom="@dimen/small_vertical_margin"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+
+            >
+            <TextView
+                android:textColor="#000"
+                android:text="简介"
+                android:layout_width="@dimen/textView_width_2words"
+                android:textSize="14dp"
+                android:gravity="center"
+                android:layout_height="match_parent" />
+            <EditText
+                android:textColor="#000"
+                android:id="@+id/inputAbout_Tv"
+                android:layout_width="240dp"
+                android:singleLine="false"
+                android:layout_marginRight="@dimen/right_margin"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
 
         <Button
             android:layout_gravity="center"
             android:id="@+id/sureBtn"
+            android:layout_marginTop="@dimen/large_vertical_margin"
+            android:layout_marginBottom="@dimen/large_vertical_margin"
             android:layout_width="match_parent"
-            android:layout_margin="12dp"
             android:textSize="14dp"
             android:text="保存修改"
             android:textColor="@color/light"

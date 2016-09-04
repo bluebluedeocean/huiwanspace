@@ -30,7 +30,6 @@ public class textuserinfo {
                                 failCallBack.onFail(msg);
                             }
                     }
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
