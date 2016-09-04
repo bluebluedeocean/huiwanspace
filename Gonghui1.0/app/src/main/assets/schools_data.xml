@@ -363,7 +363,7 @@
             <campus id="867" cName="中国科学技术大学" sId="1021"/>
         </school>
     </province>
-    <province pName="澳门" id="34"></province>
+
     <province pName="北京" id="1">
         <school id="38" sName="北方工业大学" pId="1">
             <campus id="45" cName="北方工业大学" sId="38"/>
@@ -6529,7 +6529,6 @@
             <campus id="1945" cName="中国民用航空飞行学院" sId="2099"/>
         </school>
     </province>
-    <province pName="台湾" id="32"></province>
     <province pName="天津" id="2">
         <school id="160" sName="北京科技大学天津学院" pId="2">
             <campus id="147" cName="北京科技大学天津学院" sId="160"/>
