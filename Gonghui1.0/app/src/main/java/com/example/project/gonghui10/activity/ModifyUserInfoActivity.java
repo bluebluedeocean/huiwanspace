@@ -17,7 +17,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.project.gonghui10.Config;
 import com.example.project.gonghui10.R;
@@ -36,16 +35,20 @@ import java.io.FileOutputStream;
 @SuppressLint("SdCardPath")
 public class ModifyUserInfoActivity extends ChoseLocationUtil implements OnClickListener {
     private ImageView ivHead;//头像显示
-    private String face;
     private Button btnTakephoto;//拍照
     private Button btnPhotos;//相册
     private Bitmap head;//头像Bitmap
     private static String path = "/sdcard/myHead/";//sd路径
 
-    private Spinner provinceSpinner,schoolSpinner,campusSpinner;
-    private TextView tv_result;
-    private Button sure_location;
-    private String location;
+    private String face;
+    private String sex;
+//    private String name;
+//    private String phone;
+//    private String email;
+//    private EditText nameEt,phoneEt,EmailEt;
+
+    private Spinner provinceSpinner, schoolSpinner, campusSpinner, sexSpinner;
+    private Button sureBtn;
 
 
     @Override
@@ -53,21 +56,44 @@ public class ModifyUserInfoActivity extends ChoseLocationUtil implements OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modifyuserinfo_layout);
         SysApplication.getInstance().addActivity(this);
-        initView();
         loadInfo();
-        modifyheadpic();
+        selectLocation();
+        selectSex();
+        modifyHeadPic();
+        sureBtn = (Button) findViewById(R.id.sureBtn);
+        sureBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
+    private void selectSex() {
+        sexSpinner = (Spinner) findViewById(R.id.sex_spinner);
+        String[] sexItem = getResources().getStringArray(R.array.sex);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item , sexItem);
+        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        sexSpinner.setAdapter(adapter);
+        sexSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String[] sex = getResources().getStringArray(R.array.sex);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
-    private void initView() {
+            }
+        });
+    }
+
+    private void selectLocation() {
         provinceSpinner = (Spinner) findViewById(R.id.spinner1);
         schoolSpinner = (Spinner) findViewById(R.id.spinner2);
         campusSpinner = (Spinner) findViewById(R.id.spinner3);
-        tv_result = (TextView) findViewById(R.id.resultTv);
-        sure_location = (Button) findViewById(R.id.sureBtn);
         initSchoolDatas();
-        ArrayAdapter<String> provinceAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mProvinceDatas);
+        ArrayAdapter<String> provinceAdapter = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item, mProvinceDatas);
         provinceSpinner.setAdapter(provinceAdapter);
         provinceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -78,9 +104,9 @@ public class ModifyUserInfoActivity extends ChoseLocationUtil implements OnClick
                 pId = mProvinceIds[position];
                 String[] schools = mSchoolDatasMap.get(mCurrentProviceName);
                 if (schools == null) {
-                    schools = new String[] { "" };
+                    schools = new String[]{""};
                 }
-                ArrayAdapter<String> schoolAdapter = new ArrayAdapter<String>(ModifyUserInfoActivity.this, android.R.layout.simple_list_item_1, schools);
+                ArrayAdapter<String> schoolAdapter = new ArrayAdapter<String>(ModifyUserInfoActivity.this,R.layout.support_simple_spinner_dropdown_item, schools);
                 schoolSpinner.setAdapter(schoolAdapter);
                 mCurrentSchoolName = mSchoolDatasMap.get(mCurrentProviceName)[0];
                 sId = mSchoolIdsMap.get(mCurrentProviceName)[0];
@@ -88,11 +114,10 @@ public class ModifyUserInfoActivity extends ChoseLocationUtil implements OnClick
                 mCurrentCampusName = campus[0];
                 cId = mCampusIdsMap.get(mCurrentSchoolName)[0];
                 if (campus == null) {
-                    campus = new String[] { "" };
+                    campus = new String[]{""};
                 }
-                ArrayAdapter<String> campusAdapter = new ArrayAdapter<String>(ModifyUserInfoActivity.this, android.R.layout.simple_list_item_1, campus);
+                ArrayAdapter<String> campusAdapter = new ArrayAdapter<String>(ModifyUserInfoActivity.this,R.layout.support_simple_spinner_dropdown_item, campus);
                 campusSpinner.setAdapter(campusAdapter);
-                tv_result.setText(mCurrentProviceName+","+mCurrentSchoolName+","+mCurrentCampusName);
             }
 
             @Override
@@ -111,11 +136,10 @@ public class ModifyUserInfoActivity extends ChoseLocationUtil implements OnClick
                 mCurrentCampusName = areas[0];
                 cId = mCampusIdsMap.get(mCurrentSchoolName)[0];
                 if (areas == null) {
-                    areas = new String[] { "" };
+                    areas = new String[]{""};
                 }
-                ArrayAdapter<String> campusAdapter = new ArrayAdapter<String>(ModifyUserInfoActivity.this, android.R.layout.simple_list_item_1, areas);
+                ArrayAdapter<String> campusAdapter = new ArrayAdapter<String>(ModifyUserInfoActivity.this,R.layout.support_simple_spinner_dropdown_item, areas);
                 campusSpinner.setAdapter(campusAdapter);
-                tv_result.setText(mCurrentProviceName+","+mCurrentSchoolName+","+mCurrentCampusName);
             }
 
             @Override
@@ -128,10 +152,9 @@ public class ModifyUserInfoActivity extends ChoseLocationUtil implements OnClick
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                Spinner sp = (Spinner)parent;
+                Spinner sp = (Spinner) parent;
                 mCurrentCampusName = (String) sp.getItemAtPosition(position);
                 cId = mCampusIdsMap.get(mCurrentSchoolName)[position];
-                tv_result.setText(mCurrentProviceName+","+mCurrentSchoolName+","+mCurrentCampusName);
             }
 
             @Override
@@ -158,7 +181,7 @@ public class ModifyUserInfoActivity extends ChoseLocationUtil implements OnClick
     }
 
     @Override
-    public void onClick(View v)    {
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.selectfromgrally_btn://从相册里面取照片
                 Intent intent1 = new Intent(Intent.ACTION_PICK, null);
@@ -176,7 +199,7 @@ public class ModifyUserInfoActivity extends ChoseLocationUtil implements OnClick
         }
     }
 
-    private void modifyheadpic() {
+    private void modifyHeadPic() {
         //初始化控件
         btnPhotos = (Button) findViewById(R.id.selectfromgrally_btn);
         btnTakephoto = (Button) findViewById(R.id.takepohoto_btn);
@@ -252,11 +275,13 @@ public class ModifyUserInfoActivity extends ChoseLocationUtil implements OnClick
     }
 
     private void loadInfo() {
+
         new textuserinfo(Config.getCacheSessionId(this), new textuserinfo.SuccessCallBack() {
             @Override
             public void onSuccess(JSONObject obj) {
                 try {
                     setContent(obj);
+//                    setInit(obj);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -269,9 +294,34 @@ public class ModifyUserInfoActivity extends ChoseLocationUtil implements OnClick
         });
     }
 
+//    private void setInit(JSONObject obj) throws JSONException {
+//        nameEt = (EditText) findViewById(R.id.inputName_Tv);
+//        phoneEt = (EditText) findViewById(R.id.inputPhone_Tv);
+//        EmailEt = (EditText) findViewById(R.id.inputEmail_Tv);
+//
+//        name = obj.getString("name");
+//        phone = obj.getString("phone");
+//        email = obj.getString("email");
+//
+//        nameEt.setHint(name);
+//        phoneEt.setHint(phone);
+//        EmailEt.setHint(email);
+//    }
+
     public void setContent(JSONObject content) throws JSONException {
         ImageLoader il = new ImageLoader(this);
         face = content.getString("face");
-        il.DisplayImage(face,ivHead);
+        il.DisplayImage(face, ivHead);
+
+        sex = content.getString("sex");
+        sexSpinner.setSelection(getSelection());
+    }
+
+    private int getSelection() {
+        if (sex == "男") {
+            return 0;
+        } else if (sex == "女") {
+            return 1;
+        } else return 2;
     }
 }
